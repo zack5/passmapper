@@ -1,0 +1,50 @@
+/* --- HEADER ---*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: 70px;
+    padding-inline: 50px;
+    box-sizing: border-box;
+
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+header>div {
+    flex-basis: 100%;
+    display: flex
+}
+
+.logo {
+    height: 25px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 1.4rem;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: #b1b1b1;
+    padding-inline: 10px;
+}
+
+.nav-container a:hover {
+    background-color: #f6f6f6;
+    outline: 5px solid #f6f6f6;
+    border-radius: 999px;
+}
+
+/* --- MAIN ---*/
+
+main {
+    padding-inline: 50px;
+}
