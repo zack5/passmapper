@@ -1,3 +1,21 @@
+h1 {
+    font-size: 3rem;
+    margin-top: -1rem;
+    margin-bottom: .3125rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-block: .3125rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-block: .3125rem;
+}
+
 /* --- HEADER ---*/
 
 header {
@@ -10,7 +28,10 @@ header {
     padding-inline: 50px;
     box-sizing: border-box;
 
+    background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 1000;
 }
 
 header>div {
@@ -46,19 +67,74 @@ header>div {
 /* --- MAIN ---*/
 
 main {
+    padding-top: 100px;
     padding-inline: 50px;
 }
 
-/* --- CARD ---*/
+/* --- CARD HOLDER ---*/
 
 .card {
     width: 81px;
     height: 128px;
     border-radius: 6px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
 }
 
 .card-container {
+    margin-top: -35px;
+    margin-bottom: 55px;
     display: grid;
     /* grid-template-columns handled in jsx */
+}
+
+.card-container-child {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- CARD DETAIL ---*/
+.card-detail-container {
+    display: flex;
+    flex-direction: row;
+
+    gap: 55px
+}
+
+.card-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+}
+
+.card-detail-info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-detail-info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.card-detail-info-row>img {
+    height: 1.5rem;
+}
+
+.stars {
+    height: 1.5rem;
+    display: flex;
+    gap: 1px;
+}
+
+.star-filled {
+    height: 1.5rem;
+}
+
+.star-empty {
+    height: 1.5rem;
+    filter: blur(1px) grayscale(1);
+    opacity: 0.5;
 }

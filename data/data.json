@@ -8,7 +8,7 @@
       "Design Notes": "Distinctive, clean iconography. The esoteric reference to fast sailing ships known as \"clippers\" is sort of out of left field but also somewhat charming.",
       "Transit System": "⭐️⭐️⭐️",
       "Transit System Notes": "Solid connections along corridor, but abysmal last mile options after you get there. Stronger options within the city, yet some pockets still lack good transit options.",
-      "Asset": "clipper.png"
+      "id": "clipper"
     },
     {
       "Card": "Orca",
@@ -19,7 +19,7 @@
       "Design Notes": "Strong iconography and amazing theme. As a nitpick, the colored bands feel a little out of place to me visually. The updated 2022 design is a 5-star though--I want one!",
       "Transit System": "⭐️⭐️⭐️",
       "Transit System Notes": "Excellent light rail service is paired with strong bus network, though many trips require a car.",
-      "Asset": "orca.png"
+      "id": "orca"
     },
     {
       "Card": "Opal",
@@ -30,7 +30,7 @@
       "Design Notes": "Card design is elegant and color scheme is pleasing. Name is short and catchy, though the theme feels more generic to the whole of Australia than to Sydney specifically.",
       "Transit System": "⭐️⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Easy to live car-free in inner Sydney. Strong connectivity within the region, including to outdoorsy destinations such as the Blue Mountains and Royal National Park. Clean and safe.",
-      "Asset": "opal.jpg"
+      "id": "opal"
     },
     {
       "Card": "Go Card",
@@ -41,7 +41,7 @@
       "Design Notes": "Busy design that lacks regional identity. Name could not be more generic.",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Exhaustive network that stretches to the Gold Coast. I wish I had more experience with it to better evalute its placement!",
-      "Asset": "go.jpg"
+      "id": "go"
     },
     {
       "Card": "MyWay",
@@ -52,7 +52,7 @@
       "Design Notes": "I find the \"TC\" very sleek and attractive, though I do question why they chose to depict the icon for Transport Canberra instead of the name MyWay. Name is too generic.",
       "Transit System": "⭐️⭐️",
       "Transit System Notes": "Just has a single light rail line. Bus service is decent, though I had one poor experience where a bus didn't stop for me even though I signaled and it did not look full.",
-      "Asset": "myway.png"
+      "id": "myway"
     },
     {
       "Card": "Bee Card",
@@ -63,7 +63,7 @@
       "Design Notes": "Card is so charming that I am willing to overlook that bees are not strongly associated with New Zealand specifically (precise origin of name is unclear to me). The golden color and elegant iconography simply cannot bee beat. Metaphor strenthens the idea of a busy, active, well-connected community. I love it.",
       "Transit System": "⭐️⭐️",
       "Transit System Notes": "Covers busses in ten regions of New Zealand. Had a fine experience during my trip to Queenstown, though I can't vouch for the other cities in the Bee Card network!",
-      "Asset": "bee.png"
+      "id": "bee"
     },
     {
       "Card": "Myki",
@@ -74,7 +74,7 @@
       "Design Notes": "Simple design that has visual consistency with Public Transit Victoria, but I would appreciate some regional flavor. I also wish there were some more striking contrast against the card's black background.",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Melbournians loved their trams enough to not pull them up in the 60s, but not enough to add a rail connection to the airport!",
-      "Asset": "myki.jpg"
+      "id": "myki"
     },
     {
       "Card": "SmartRider",
@@ -85,7 +85,7 @@
       "Design Notes": "Design is overly busy. Why does the icon have shading to make it look 3D? And why is all of the info crammed on the front side with a blank back? And no distinctive name or theme? I'm afraid this card has zero perthonality.",
       "Transit System": "⭐️⭐️⭐️",
       "Transit System Notes": "An abundance of single sparsley populated residential areas makes good transit difficult to achieve, but a growing number of rail and bus lines do an admirable attempt.",
-      "Asset": "smartrider.jpg"
+      "id": "smartrider"
     },
     {
       "Card": "MetroCard",
@@ -96,7 +96,7 @@
       "Design Notes": "Iconic design, though it does feel like it was made in Word Art. Not as durable as standard transit cards. Lacking regional flavor.",
       "Transit System": "⭐️⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common. Fare capping with OMNY is just nicer to use, though.",
-      "Asset": "metrocard.png"
+      "id": "metrocard"
     },
     {
       "Card": "OMNY",
@@ -107,7 +107,7 @@
       "Design Notes": "Strong visual language that is echoed throughout payment system. Acronym for \"One Metro New York\".",
       "Transit System": "⭐️⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common.",
-      "Asset": "omny.jpg"
+      "id": "omny"
     },
     {
       "Card": "SmartLink",
@@ -118,7 +118,7 @@
       "Design Notes": "Visual design does not particularly offend me, but I can't say I love it.",
       "Transit System": "⭐️⭐️",
       "Transit System Notes": "Just a few lines, though a very important few lines! You can also use a MetroCard for all of these lines and more.",
-      "Asset": "smartlink.png"
+      "id": "smartlink"
     },
     {
       "Card": "OPUS",
@@ -129,7 +129,7 @@
       "Design Notes": "Blue and orange is a bold choice. I would appreciate more distinctive and perhaps even Quebec-specific iconography, though this earns flavor points for the name being a pun on carte à puce (French for smart card with embedded chip).",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Network within Montreal is strong. Modern open-carriage trains feel comfortable and safe--not to mention beautiful. Payment using fare pass bundles instead of simply pay-per-trip with fare capping is a minor frustration.",
-      "Asset": "opus.png"
+      "id": "opus"
     },
     {
       "Card": "CharlieCard",
@@ -140,7 +140,7 @@
       "Design Notes": "Design is too busy (why are there so many identifying numbers on the front?), but is slightly redeemed by some regional charm. Named after the lead character in a 1948 protest folk music song \"M.T.A\".",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Lots of trips possible without a car. Easy to be a tourist and only rely on the T.",
-      "Asset": "charlie.jpg"
+      "id": "charlie"
     },
     {
       "Card": "Go CT Card",
@@ -151,7 +151,7 @@
       "Design Notes": "Purple cards are rare treat! However, the name is too generic, and the barcode on the front is visually unappealing.",
       "Transit System": "⭐️",
       "Transit System Notes": "Only works for busses. (Disclaimer: I have not used this system)",
-      "Asset": "goct.jpg"
+      "id": "goct"
     },
     {
       "Card": "Tropicard",
@@ -162,7 +162,7 @@
       "Design Notes": "Not as simple as your classic transit cards, but I find it pleasing. Uses a lot of colors that are rare in the space.",
       "Transit System": "⭐️",
       "Transit System Notes": "Sparse bus network across vast see of single family dwellings. I do appreciate that there is a line from the airport and a line to the beach.",
-      "Asset": "tropicard.jpg"
+      "id": "tropicard"
     },
     {
       "Card": "The Bus",
@@ -173,7 +173,7 @@
       "Design Notes": "Nothing is offensive about the simple design, but I wish it had any element to tie it to Springfield in some way. And it's just called... \"The Bus\"? Could use some iteration.",
       "Transit System": "⭐️",
       "Transit System Notes": "Infrequent bus service around downtown and neighboring suburbs.",
-      "Asset": "thebus.jpg"
+      "id": "thebus"
     },
     {
       "Card": "Divia",
@@ -184,7 +184,7 @@
       "Design Notes": "Somehow feels both too plain and too busy--plain in that there is a lot of whitespace, and busy in that there are a lot of competing colors and detailed clipart.",
       "Transit System": "⭐️⭐️⭐️",
       "Transit System Notes": "Punches way above its weight as a city of 160k. In addition to a robust bus network, Dijon has two light rail lines with beautiful rolling stock and high frequency.",
-      "Asset": "divia.jpg"
+      "id": "divia"
     },
     {
       "Card": "Navigo",
@@ -195,7 +195,7 @@
       "Design Notes": "I do like the little guy and I like that the symbol is echoed on busses and around the city. Solid name, though the English in Its full title \"Navigo Easy\" feels jarring. Pale blue does not feel like a particularly Parisian color to me.",
       "Transit System": "⭐️⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Frequent, reliable, expansive, and straightforward to navigate. Although, often times I just find myself walking around because its so pleasant to do so in the city!",
-      "Asset": "navigo.png"
+      "id": "navigo"
     },
     {
       "Card": "Mobib",
@@ -206,7 +206,7 @@
       "Design Notes": "I adore these little guys. Everyone is so happy to be riding the train! I want to be them!",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Robust network of metro, tram, and bus lines. Well connected to neighboring cities as well.",
-      "Asset": "mobib.jpg"
+      "id": "mobib"
     },
     {
       "Card": "Citycard",
@@ -217,7 +217,7 @@
       "Design Notes": "Basic but effective. The Gravensteen castle is very recongizibly Gent.",
       "Transit System": "⭐️⭐️⭐️⭐️",
       "Transit System Notes": "Extensive tram system that is well-connected throughout the city.",
-      "Asset": "citycard.jpg"
+      "id": "citycard"
     },
     {
       "Card": "OV",
@@ -228,7 +228,7 @@
       "Design Notes": "The thresholded colors add a lot of visual noise, but for some reason I don't mind it too much. I do like the composition.",
       "Transit System": "⭐️⭐️⭐️⭐️⭐️",
       "Transit System Notes": "There is no greater feeling than zooming past car traffic in dedicated grade-separated bus lanes. The metro and trams are excellent and the bicycle infrastructure is the best the world has to offer.",
-      "Asset": "ov.jpg"
+      "id": "ov"
     },
     {
       "Card": "Oura",
@@ -239,6 +239,6 @@
       "Design Notes": "The typography is playful and distinctive. I believe the name is meant to sound like \"hourra\" (\"hooray\" in French)? Which is equally as delightful.",
       "Transit System": "⭐️⭐️⭐️",
       "Transit System Notes": "The bus network around Annecy is excellent, even allowing you to get to some more remote hiking spots. Train connectivity to neighboring cities is great, though I wish the train were a more attractive option to get to the nearest airport in Geneva.",
-      "Asset": "oura.png"
+      "id": "oura"
     }
   ]

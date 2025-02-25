@@ -1,15 +1,29 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import { useCardsData } from '../components/CardsContext'
 
 import Card from '../components/Card'
 
 export default function CardHolder() {
+  const { id } = useParams();
+  const hasId = id != undefined;
+
   const [hoverIndex, setHoverIndex] = useState(0)
 
   const cards = useCardsData()
   const cardElements = cards.map((card, index) => {
-    return <Card key={card.Asset} card={card} index={index} hoverIndex={hoverIndex} onHover={setHoverIndex} />
+    return ( false//id == card.id
+      ? <div 
+        key={card.id}
+        className="card" />
+      : <Card 
+        key={card.id}
+        card={card}
+        index={index}
+        hoverIndex={hoverIndex} 
+        onHover={setHoverIndex} />
+      
+    )
   })
 
   const gridColumnStyle = {
@@ -18,13 +32,12 @@ export default function CardHolder() {
 
   return (
     <>
-      <h1>
-        Card Holder
-      </h1>
       <div className="card-container" style={gridColumnStyle}>
         {cardElements}
       </div>
-      <Outlet />
+      <div className="card-container-child">
+        <Outlet />
+      </div>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
 
 import About from './pages/About'
 import CardDetail from './pages/CardDetail'
@@ -13,9 +14,15 @@ import Layout from './components/Layout'
 
 import './App.css'
 
-export default function App() {
+// TODO: 
+// - Add card sorting
+// - Add map
+// - Add card detail
+// - Add about
+// - Add notfound page
+// - Add stats page
 
-  
+export default function App() {
   return (
     <CardsProvider>
       <BrowserRouter>

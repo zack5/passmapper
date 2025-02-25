@@ -12,7 +12,6 @@ export function CardsProvider({ children }) {
   );
 }
 
-// Hook to use the data
 export function useCardsData() {
   return useContext(CardsContext);
 }
