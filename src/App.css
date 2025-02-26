@@ -178,3 +178,18 @@ main {
     filter: blur(1px) grayscale(1);
     opacity: 0.5;
 }
+
+/* --- MAP ---*/
+
+svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+  
+path {
+    fill: #b1b1b1;
+}
+
+.map-container {
+    width: 80%;
+}

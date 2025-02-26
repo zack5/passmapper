@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-export default function Card({ card, index, hoverIndex, onHover, key }) {
+export default function Card({ card, index, hoverIndex, onHover }) {
     const { id } = useParams();
 
 
