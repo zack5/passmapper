@@ -107,14 +107,14 @@ main {
 .card {
     width: 81px;
     height: 128px;
-    border-radius: 6px;
+    border-radius: 7px;
     position: relative;
 }
 
 .card-expanded {
     width: 197px;
     height: 313px;
-    border-radius: 13px;
+    border-radius: 15px;
     position: relative;}
 
 .card-shadow {
