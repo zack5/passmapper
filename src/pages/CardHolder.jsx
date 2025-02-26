@@ -4,38 +4,17 @@ import Select from 'react-select'
 
 import { useCardsData } from '../components/CardsContext'
 import Card from '../components/Card'
+import { useNavigationData } from '../components/NavigationContext'
+import SortSelect from '../components/SortSelect'
+
+import { SORTING_DATA } from '../utils/constants'
 
 export default function CardHolder() {
-  const [sortingOption, setSortingOption] = useState('location')
-
-  const sortingData = {
-    color: {
-      label: 'Color',
-      sortFunction: (a, b) => a.Card.localeCompare(b.Card),
-    },
-    date: {
-      label: 'Date Acquired',
-      sortFunction: (a, b) => b['Date Obtained'] < a['Date Obtained'],
-    },
-    location: {
-      label: 'Location',
-      sortFunction: (a, b) => b.Coordinates[0] < a.Coordinates[0],
-    },
-    name: {
-      label: 'Name',
-      sortFunction: (a, b) => a.Card.localeCompare(b.Card),
-    },
-  }
-
-  const sortingOptions = Object.entries(sortingData).map(([key, value]) => ({
-    value: key,
-    label: value.label,
-  }))
-  const currentSortingOption = sortingOptions.find(option => option.value === sortingOption)
-
+  const { sortingOption } = useNavigationData();
+  
   const cards = useCardsData()
   const cardElements = cards
-    .sort(sortingData[sortingOption].sortFunction)
+    .sort(SORTING_DATA[sortingOption].sortFunction)
     .map((card, index) => {
       return (
         <div key={`small-card-${card.id}`}>
@@ -56,7 +35,7 @@ export default function CardHolder() {
       <div className="card-container" style={gridColumnStyle}>
         {cardElements}
       </div>
-      <Select value={currentSortingOption} options={sortingOptions} onChange={(e) => setSortingOption(e.value)} isClearable={false} />
+      <SortSelect />
       <div className="card-container-child">
         <Outlet />
       </div>

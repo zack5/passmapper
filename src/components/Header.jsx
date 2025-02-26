@@ -2,9 +2,11 @@ import { NavLink } from 'react-router-dom'
 
 import projectLogo from '/assets/passmapper.png'
 
+import { COLOR_ACCENT } from '../utils/constants'
+
 export default function Header() {
     const activeStyles = {
-        color: '#003E77',
+        color: COLOR_ACCENT,
         backgroundColor: 'transparent',
         outline: '0'
     }

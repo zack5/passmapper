@@ -4,6 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
+
+import { COLOR_ACCENT } from '../utils/constants';
+
 export default function Map() {
   const cards = useCardsData();
   const { selectedCardId, setSelectedCardId } = useNavigationData()
@@ -31,7 +34,7 @@ export default function Map() {
           {cards.map((card) => (
             <Marker key={card.Card} coordinates={card.Coordinates}>
               <Link to={`${card.id}`} onMouseEnter={() => setSelectedCardId(card.id)}>
-                <circle r={3} fill="#003E77" />
+                <circle r={3} fill={COLOR_ACCENT} />
                 {/* <text x="0" y="0" dy={10} textAnchor="middle" fill="#003E77">{card.Card}</text> */}
               </Link>
             </Marker>
