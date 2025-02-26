@@ -1,12 +1,28 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
+import { Link, useParams } from "react-router-dom";
 
 import { motion } from "framer-motion";
 
-export default function Card({ card, index, hoverIndex, onHover, isStatic, key }) {
+export default function Card({ card, index, hoverIndex, onHover, key }) {
+    const { id } = useParams();
+
+
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    if (isAnimating) {
+        console.log(card.id)
+    }
+
+    const isSelected = id === card.id
+    if (isSelected) {
+        return <div className="card" />
+    }
+
     const isHovered = index === hoverIndex
 
     function onMouseEnter() {
-        if (onHover && !isStatic) 
+        if (onHover) 
             onHover(index)
     }
 
@@ -17,32 +33,23 @@ export default function Card({ card, index, hoverIndex, onHover, isStatic, key }
         ? -1 * Math.abs(index - hoverIndex) + 999
         : 999
 
-    const width = isStatic ? '197px' : '81px'
-    const height = isStatic ? '313px' : '128px'
-    const borderRadius = isStatic ? '13px' : '6px'
-
     return (
-        <motion.div key={key ? key : `card-${card.id}`} layoutId={`card-${card.id}`}>
             <Link to={`${card.id}`}>
                 <motion.img
-                    className="card"
+                    layoutId={`card-${card.id}`}
+                    className="card card-shadow"
                     src={`/cards/${card.id}.jpg`}
                     alt={card.name}
                     style={{
                         zIndex: zIndex,
-                        width: width,
-                        height: height,
-                        borderRadius: borderRadius
                     }}
-                    // initial={{ scale: 1 }}
-                    // animate={{
-                    //     scale: (isHovered && !isStatic) ? 1.1 : 1,
-                    // }}
-                    // transition={{ duration: 0.3, type: 'spring' }}
+                    initial={{ scale: 1 }}
+                    animate={{
+                        scale: (isHovered) ? 1.1 : 1,
+                    }}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 />
             </Link>
-        </motion.div>
     )
 }

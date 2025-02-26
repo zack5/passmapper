@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import { useCardsData } from '../components/CardsContext';
 
-import Card from '../components/Card';
+import CardExpanded from '../components/CardExpanded';
 import Stars from '../components/Stars';
 
 import placeIcon from '/assets/place-icon.png'
@@ -20,7 +20,7 @@ export default function CardDetail() {
   return (
     <div className="card-detail-container">
       <AnimatePresence mode="wait">
-        <Card key={`detail-card-${card.id}`} card={card} isStatic={true} />
+        <CardExpanded card={card} />
       </AnimatePresence>
 
       <div className="card-detail-info">

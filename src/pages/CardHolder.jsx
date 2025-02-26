@@ -12,17 +12,12 @@ export default function CardHolder() {
 
   const cards = useCardsData()
   const cardElements = cards.map((card, index) => {
-    return ( false//id == card.id
-      ? <div 
-        key={card.id}
-        className="card" />
-      : <Card 
-        key={card.id}
+    return (
+      <Card 
         card={card}
         index={index}
         hoverIndex={hoverIndex} 
         onHover={setHoverIndex} />
-      
     )
   })
 

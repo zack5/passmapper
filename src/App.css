@@ -64,10 +64,41 @@ header>div {
     border-radius: 999px;
 }
 
+/* --- Footer ---*/
+
+footer {
+    display: flex;
+    align-items: center;
+
+    width: 100vw;
+    height: 70px;
+    padding-inline: 50px;
+    box-sizing: border-box;
+
+    background-color: #f6f6f6;
+    z-index: 1000;
+
+    color: #b1b1b1;
+}
+
+.footer-nav-container {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav-container > a {
+    color: #b1b1b1;
+    text-decoration: none;
+}
+
+.footer-nav-container > a:hover {
+    text-decoration: underline;
+}
+
 /* --- MAIN ---*/
 
 main {
-    padding-top: 100px;
+    padding-block: 100px;
     padding-inline: 50px;
 }
 
@@ -77,8 +108,17 @@ main {
     width: 81px;
     height: 128px;
     border-radius: 6px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     position: relative;
+}
+
+.card-expanded {
+    width: 197px;
+    height: 313px;
+    border-radius: 13px;
+    position: relative;}
+
+.card-shadow {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
 .card-container {
