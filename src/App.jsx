@@ -1,6 +1,4 @@
-import { createContext } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion'
 
 import About from './pages/About'
 import CardDetail from './pages/CardDetail'
@@ -10,34 +8,37 @@ import NotFound from './pages/NotFound'
 import Stats from './pages/Stats'
 
 import { CardsProvider } from './components/CardsContext'
+import { NavigationProvider } from './components/NavigationContext'
 import Layout from './components/Layout'
 
 import './App.css'
 
 // TODO: 
 // - Add card sorting
-// - Add map
-// - Add card detail
-// - Add about
-// - Add notfound page
+// - Improve map visuals (label overlapping, remove country borders)
+// - Hovering map pin selects card from holder
+// - Back button to map from card detail
+// - Add about page
 // - Add stats page
 
 export default function App() {
   return (
     <CardsProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />} >
-            <Route element={<CardHolder />} >
-              <Route index element={<Map />} />
-              <Route path=":id" element={<CardDetail />} />
+      <NavigationProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />} >
+              <Route element={<CardHolder />} >
+                <Route index element={<Map />} />
+                <Route path=":id" element={<CardDetail />} />
+              </Route>
+              <Route path="about" element={<About />} />
+              <Route path="stats" element={<Stats />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
-            <Route path="about" element={<About />} />
-            <Route path="stats" element={<Stats />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </NavigationProvider>
     </CardsProvider>
   )
 }

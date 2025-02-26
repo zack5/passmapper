@@ -19,7 +19,7 @@ export default function Header() {
             <img src={projectLogo} className="logo" alt="Pass logo" />
         </div>
         <div className='nav-container'>
-            <NavLink to="/" style={getActiveStyles}>Cards</NavLink>
+            <NavLink to="/" style={getActiveStyles}>Map</NavLink>
             <NavLink to="/stats" style={getActiveStyles}>Stats</NavLink>
             <NavLink to="/about" style={getActiveStyles}>About</NavLink>
         </div>

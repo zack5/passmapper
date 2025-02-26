@@ -1,36 +1,33 @@
-import { useState } from "react";
-
 import { Link, useParams } from "react-router-dom";
+
+import { useCardsData } from "./CardsContext";
+import { useNavigationData } from "./NavigationContext";
 
 import { motion } from "framer-motion";
 
-export default function Card({ card, index, hoverIndex, onHover }) {
+export default function Card({ card, index }) {
     const { id } = useParams();
 
-
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    if (isAnimating) {
-        console.log(card.id)
-    }
-
-    const isSelected = id === card.id
-    if (isSelected) {
+    const isInDetailView = id === card.id
+    if (isInDetailView) {
         return <div className="card" />
     }
+    
+    const { selectedCardId, setSelectedCardId } = useNavigationData()
+    const isSelected = card.id == selectedCardId
 
-    const isHovered = index === hoverIndex
+    const cards = useCardsData()
+    const selectedCardIndex = cards.findIndex(card => card.id === selectedCardId)
 
     function onMouseEnter() {
-        if (onHover) 
-            onHover(index)
+        setSelectedCardId(card.id)
     }
 
     function onMouseLeave() {
     }
 
-    const zIndex = (index != undefined && hoverIndex != undefined) 
-        ? -1 * Math.abs(index - hoverIndex) + 999
+    const zIndex = (index != undefined && selectedCardIndex != undefined) 
+        ? -1 * Math.abs(index - selectedCardIndex) + 999
         : 999
 
     return (
@@ -45,7 +42,7 @@ export default function Card({ card, index, hoverIndex, onHover }) {
                     }}
                     initial={{ scale: 1 }}
                     animate={{
-                        scale: (isHovered) ? 1.1 : 1,
+                        scale: (isSelected) ? 1.1 : 1,
                     }}
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}

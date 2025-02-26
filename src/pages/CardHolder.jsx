@@ -1,15 +1,10 @@
-import { useState } from 'react'
-import { Outlet, useParams } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+
 import { useCardsData } from '../components/CardsContext'
 
 import Card from '../components/Card'
 
 export default function CardHolder() {
-  const { id } = useParams();
-  const hasId = id != undefined;
-
-  const [hoverIndex, setHoverIndex] = useState(0)
-
   const cards = useCardsData()
   const cardElements = cards.map((card, index) => {
     return (
@@ -17,8 +12,7 @@ export default function CardHolder() {
         <Card 
           card={card}
           index={index}
-          hoverIndex={hoverIndex} 
-          onHover={setHoverIndex} />
+        />
       </div>
     )
   })

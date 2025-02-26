@@ -64,7 +64,7 @@ header>div {
     border-radius: 999px;
 }
 
-/* --- Footer ---*/
+/* --- FOOTER ---*/
 
 footer {
     display: flex;
@@ -134,11 +134,35 @@ main {
 }
 
 /* --- CARD DETAIL ---*/
+
+.card-detail-page {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-detail-back {
+    position: absolute;
+    left: 55px;
+    top: 250px;
+}
+
+.card-detail-back > a {
+    color: #b1b1b1;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.card-detail-back > a:hover {
+    text-decoration: underline;
+}
+
 .card-detail-container {
     display: flex;
     flex-direction: row;
 
-    gap: 55px
+    gap: 55px;
+    margin: 0 auto;
 }
 
 .card-detail-info {
