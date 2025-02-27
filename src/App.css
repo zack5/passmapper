@@ -16,6 +16,13 @@ p {
     margin-block: .3125rem;
 }
 
+button {
+    background-color: white;
+  border: 1px solid #cccccc; /* Tailwind gray-300 */
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
 /* --- HEADER ---*/
 
 header {
@@ -216,4 +223,31 @@ path {
 
 .map-container {
     width: 80%;
+}
+
+/* --- CARD SORTING ---*/
+
+.sort-select-container {
+    position: absolute;
+    top: 200px;
+    left: 45px;
+    z-index: 1000;
+
+    display: flex;
+    gap: 0.2rem;
+}
+
+.sort-select-container > button {
+    height: 2.35rem;
+    width: 2.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.sort-select-container > button > img {
+    height: 1.5rem;
+    width: 1.5rem;
 }
