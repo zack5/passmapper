@@ -17,4 +17,12 @@ export const SORTING_DATA = {
         label: 'Name',
         sortFunction: (a, b) => a.Card.localeCompare(b.Card),
     },
+    design: {
+        label: 'Design Ranking',
+        sortFunction: (a, b) => a['Card Design'].length - b['Card Design'].length,
+    },
+    transit: {
+        label: 'Transit System Ranking',
+        sortFunction: (a, b) => a['Transit System'].length - b['Transit System'].length,
+    }
 }
