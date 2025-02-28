@@ -137,7 +137,7 @@ export default function Map() {
                       initial={false}
                       animate={{
                         scale: (selectedCardId === card.id ? 1.2 : 0.7) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
-                        y: selectedCardId === card.id ? -19 : -16,
+                        y: selectedCardId === card.id ? -18 : -16,
                         x: -12
                       }}
                       fill="var(--color-accent)"

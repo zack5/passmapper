@@ -16,10 +16,8 @@ import './App.css'
 // TODO: 
 // - dynamic imports
 // - delay map entry until load
-// - Back to map maintains zoom
 // - Place name tooltips
 // - Add about page
-// - something is weird about map back button; reconcile with settings back
 // - favicon
 
 export default function App() {
