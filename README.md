@@ -1,8 +1,5 @@
-# React + Vite
+# PassMapper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In 2023, I began making a concerted effort to collect a transit card from every city I visited. I enjoy the physical sensation of rifling through cards to find the one I want. PassMapper was designed to capture that feeling digitally.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you would like to fork this project to track your own collection, fill out /data/data.json and upload images for the corresponding cards (format: [id].jpg) in /public/cards.
