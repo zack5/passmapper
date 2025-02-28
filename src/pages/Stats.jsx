@@ -3,19 +3,21 @@ import { useState, useRef } from 'react';
 
 import { useCardsData } from '../components/CardsContext';
 
+import { SORTING_DATA } from '../utils/constants';
+
 export default function Stats() {
   const cards = useRef(useCardsData());
   const [sortMethod, setSortMethod] = useState("Card Ascending");
 
   const sortFunctions = {
-    "Card Ascending": (a, b) => a.Card.localeCompare(b.Card),
-    "Card Descending": (a, b) => b.Card.localeCompare(a.Card),
-    "Date Ascending": (a, b) => a["Date Obtained"].localeCompare(b["Date Obtained"]),
-    "Date Descending": (a, b) => b["Date Obtained"].localeCompare(a["Date Obtained"]),
-    "Design Ascending": (a, b) => a["Card Design"].length - b["Card Design"].length,
-    "Design Descending": (a, b) => b["Card Design"].length - a["Card Design"].length,
-    "Transit Ascending": (a, b) => a["Transit System"].length - b["Transit System"].length,
-    "Transit Descending": (a, b) => b["Transit System"].length - a["Transit System"].length
+    "Card Ascending": (a, b) => SORTING_DATA.name.sortFunction(a, b),
+    "Card Descending": (a, b) => SORTING_DATA.name.sortFunction(b, a),
+    "Date Ascending": (a, b) => SORTING_DATA.date.sortFunction(a, b),
+    "Date Descending": (a, b) => SORTING_DATA.date.sortFunction(b, a),
+    "Design Ascending": (a, b) => SORTING_DATA.design.sortFunction(a, b),
+    "Design Descending": (a, b) => SORTING_DATA.design.sortFunction(b, a),
+    "Transit Ascending": (a, b) => SORTING_DATA.transit.sortFunction(a, b),
+    "Transit Descending": (a, b) => SORTING_DATA.transit.sortFunction(b, a),
   }
 
   const [currentType, currentDirection] = sortMethod.split(" ");

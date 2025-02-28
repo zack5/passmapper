@@ -7,11 +7,11 @@ export const SORTING_DATA = {
     },
     date: {
         label: 'Date Acquired',
-        sortFunction: (a, b) => b['Date Obtained'] < a['Date Obtained'],
+        sortFunction: (a, b) => a['Date Obtained'].localeCompare(b['Date Obtained']),
     },
     location: {
         label: 'Location',
-        sortFunction: (a, b) => b.Coordinates[0] < a.Coordinates[0],
+        sortFunction: (a, b) => a.Coordinates[0] - b.Coordinates[0],
     },
     name: {
         label: 'Name',
