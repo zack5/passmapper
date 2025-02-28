@@ -1,11 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 
-import { useCardsData } from "./CardsContext";
 import { useNavigationData } from "./NavigationContext";
 
 import { motion } from "framer-motion";
 
-export default function Card({ card, index }) {
+export default function Card({ card, index, selectedCardIndex }) {
     const { id } = useParams();
 
     const isInDetailView = id === card.id
@@ -15,9 +14,6 @@ export default function Card({ card, index }) {
     
     const { selectedCardId, setSelectedCardId } = useNavigationData()
     const isSelected = card.id == selectedCardId
-
-    const cards = useCardsData()
-    const selectedCardIndex = cards.findIndex(card => card.id === selectedCardId)
 
     function onMouseEnter() {
         setSelectedCardId(card.id)

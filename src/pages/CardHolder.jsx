@@ -9,7 +9,7 @@ import SortSelect from '../components/SortSelect'
 import { SORTING_DATA } from '../utils/constants'
 
 export default function CardHolder() {
-  const { sortingOption } = useNavigationData();
+  const { sortingOption, selectedCardId } = useNavigationData();
   
   const cards = useRef(useCardsData())
   const previousSortingOption = useRef(null)
@@ -19,12 +19,15 @@ export default function CardHolder() {
     previousSortingOption.current = sortingOption
   }
 
+  const selectedCardIndex = cards.current.findIndex(card => card.id === selectedCardId)
+
   const cardElements = cards.current.map((card, index) => {
       return (
         <div key={`small-card-${card.id}`}>
           <Card 
           card={card}
           index={index}
+          selectedCardIndex={selectedCardIndex}
         />
       </div>
     )

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 import projectLogo from '/assets/passmapper.png'
 
@@ -18,7 +18,9 @@ export default function Header() {
     return (
     <header>
         <div className='logo-container'>
-            <img src={projectLogo} className="logo" alt="Pass logo" />
+            <Link to="/" className='logo-link'>
+                <img src={projectLogo} className="logo" alt="Pass logo" />
+            </Link>
         </div>
         <div className='nav-container'>
             <NavLink to="/" style={getActiveStyles}>Map</NavLink>

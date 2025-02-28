@@ -16,7 +16,7 @@ import './App.css'
 // TODO: 
 // - Map zoom into continents
 // - Add about page
-// - something is weird about back button from stats page
+// - something is weird about map back button; reconcile with settings back
 
 export default function App() {
   return (

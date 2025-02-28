@@ -49,9 +49,7 @@ export default function SortSelect() {
         >
             { /* Sort button */}
             <motion.button 
-                onClick={() => setIsOpen((prev) => !prev)}
                 onBlur={() => {
-                    setIsOpen(false);
                     setIsHovered(false);
                 }}
                 animate={{ opacity: (isHovered || isOpen) ? 1 : 0.3 }}
