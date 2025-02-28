@@ -15,9 +15,8 @@ import './App.css'
 
 // TODO: 
 // - dynamic imports
-// - delay map entry until load
-// - Place name tooltips
 // - Add about page
+// - Convert to using react icons for card detail
 // - favicon
 
 export default function App() {

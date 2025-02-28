@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
-import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
+import { Tooltip } from 'react-tooltip';
 
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
@@ -128,6 +129,8 @@ export default function Map() {
                   coordinates={card.Coordinates}
                   style={{ transformOrigin: "center" }}
                   onClick={(event) => event.stopPropagation()}
+                  data-tooltip-id={`marker`}
+                  data-tooltip-content={`${card.Region}, ${card.Country}`}
                 >
                   <Link 
                     to={`${card.id}`} 
@@ -150,6 +153,7 @@ export default function Map() {
               ))}
           </motion.g>
         </ComposableMap>
+        <Tooltip id={`marker`} />
       </motion.div>
     </AnimatePresence>
   )
