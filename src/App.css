@@ -76,13 +76,21 @@ header>div {
     font-size: 1.4rem;
 }
 
-.nav-container a {
+a {
     text-decoration: none;
     color: #b1b1b1;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.nav-container a {
     padding-inline: 10px;
 }
 
 .nav-container a:hover {
+    text-decoration: none;
     background-color: #f6f6f6;
     outline: 5px solid #f6f6f6;
     border-radius: 999px;
@@ -108,15 +116,6 @@ footer {
 .footer-nav-container {
     display: flex;
     gap: 20px;
-}
-
-.footer-nav-container > a {
-    color: #b1b1b1;
-    text-decoration: none;
-}
-
-.footer-nav-container > a:hover {
-    text-decoration: underline;
 }
 
 /* --- MAIN ---*/
@@ -151,7 +150,7 @@ main {
 
 .card-container {
     margin-top: -35px;
-    margin-bottom: 55px;
+    margin-bottom: 40px;
     display: grid;
     /* grid-template-columns handled in jsx */
 }
@@ -201,20 +200,14 @@ main {
 }
 
 .card-detail-back > a {
-    color: #b1b1b1;
-    text-decoration: none;
     font-size: 1.25rem;
-}
-
-.card-detail-back > a:hover {
-    text-decoration: underline;
 }
 
 .card-detail-container {
     display: flex;
     flex-direction: row;
 
-    gap: 55px;
+    gap: 45px;
     margin: 0 auto;
 }
 
@@ -266,7 +259,7 @@ main {
 
 .sort-select-container {
     position: absolute;
-    top: 200px;
+    top: 197px;
     left: 45px;
     z-index: 1000;
 
@@ -354,10 +347,45 @@ th > button  {
 }
 
 td > a {
-    text-decoration: none;
     color: #464646;
 }
 
-td > a:hover {
-    text-decoration: underline;
+/* --- ABOUT ---*/
+
+.about-page-container {
+    width: 100%;
+    max-width: 800px;
+    margin-inline: auto;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.my-image {
+    border-radius: 50%;
+    height: 6.2rem;
+}
+
+.about-me-text > h2, ul {
+    margin-block: 0;
+}
+
+.about-me-text > ul {
+    padding: 0;
+    list-style: none;
+}
+
+.contact-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
 }

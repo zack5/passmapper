@@ -14,8 +14,6 @@ import Layout from './components/Layout'
 import './App.css'
 
 // TODO: 
-// - dynamic imports
-// - Add about page
 
 export default function App() {
   return (
