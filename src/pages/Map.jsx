@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
 
-import mapPinIcon from '/assets/map-pin-icon.png';
 import continentMapping from '/data/country_to_continent.json';
 
 const CONTINENT_TRANSFORMS = {
@@ -132,11 +131,14 @@ export default function Map() {
                   <Link to={`${card.id}`} onMouseEnter={() => setSelectedCardId(card.id)}>
                     <motion.g
                       animate={{
-                        scale: (selectedCardId === card.id ? 1.5 : 0.9) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
-                        y: selectedCardId === card.id ? -6 : -3,
+                        scale: (selectedCardId === card.id ? 1.2 : 0.7) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
+                        y: selectedCardId === card.id ? -19 : -16,
+                        x: -12
                       }}
+                      fill="var(--color-accent)"
                     >
-                      <image href={mapPinIcon} width="16" height="16" x="-8" y="-8" />
+                      <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+                      <circle fill="#fff"className="map-pin-circle" cx="12" cy="10" r="3" />
                     </motion.g>
                   </Link>
                 </Marker>

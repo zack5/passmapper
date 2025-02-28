@@ -15,7 +15,7 @@ import './App.css'
 
 // TODO: 
 // - Back to map maintains zoom
-// - map icons to svg
+// - Place name tooltips
 // - Add about page
 // - something is weird about map back button; reconcile with settings back
 // - favicon
