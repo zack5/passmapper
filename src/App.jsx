@@ -14,10 +14,9 @@ import Layout from './components/Layout'
 import './App.css'
 
 // TODO: 
-// - Make card detail rotate to correct orientation
-// - Make card sorting stable (keep ref of cards)
 // - Map zoom into continents
 // - Add about page
+// - something is weird about back button from stats page
 
 export default function App() {
   return (

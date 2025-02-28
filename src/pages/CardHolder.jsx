@@ -1,6 +1,5 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import { Outlet } from 'react-router-dom'
-import Select from 'react-select'
 
 import { useCardsData } from '../components/CardsContext'
 import Card from '../components/Card'
@@ -12,10 +11,15 @@ import { SORTING_DATA } from '../utils/constants'
 export default function CardHolder() {
   const { sortingOption } = useNavigationData();
   
-  const cards = useCardsData()
-  const cardElements = cards
-    .sort(SORTING_DATA[sortingOption].sortFunction)
-    .map((card, index) => {
+  const cards = useRef(useCardsData())
+  const previousSortingOption = useRef(null)
+
+  if (sortingOption !== previousSortingOption.current) {
+    cards.current = [...cards.current].sort(SORTING_DATA[sortingOption].sortFunction)
+    previousSortingOption.current = sortingOption
+  }
+
+  const cardElements = cards.current.map((card, index) => {
       return (
         <div key={`small-card-${card.id}`}>
           <Card 
@@ -27,7 +31,7 @@ export default function CardHolder() {
   })
 
   const gridColumnStyle = {
-    gridTemplateColumns: `repeat(${cards.length - 1}, minmax(0, max-content)) max-content`
+    gridTemplateColumns: `repeat(${cards.current.length - 1}, minmax(0, max-content)) max-content`
   }
 
   return (
