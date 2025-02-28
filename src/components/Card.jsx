@@ -46,7 +46,7 @@ export default function Card({ card, index, selectedCardIndex }) {
                 <motion.img
                     layoutId={`card-${card.id}`}
                     className="card card-shadow"
-                    src={`/cards/${card.id}.jpg`}
+                    src={`/cards/${card.id}.` + (card.id === "metrocard" ? "png" : "jpg")}
                     alt={card.name}
                     style={{
                         zIndex: zIndex,

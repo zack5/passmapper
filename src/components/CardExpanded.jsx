@@ -33,7 +33,7 @@ export default function CardExpanded({ card }) {
         <div className="card-expanded-container" style={containerStyle}>
             <motion.img layoutId={`card-${card.id}`} key={key}
                 className="card-expanded card-shadow"
-                src={`/cards/${card.id}.jpg`}
+                src={`/cards/${card.id}.` + (card.id === "metrocard" ? "png" : "jpg")}
                 alt={card.name}
                 style={style}
             />

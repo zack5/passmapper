@@ -13,8 +13,6 @@ import Layout from './components/Layout'
 
 import './App.css'
 
-// TODO: 
-
 export default function App() {
   return (
     <CardsProvider>
