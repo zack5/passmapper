@@ -9,6 +9,9 @@ import { CancelIcon } from "./CancelIcon"
 export default function Card({ card, index, selectedCardIndex }) {
     const { id } = useParams();
 
+    const { selectedCardId, setSelectedCardId } = useNavigationData()
+    const isSelected = card.id == selectedCardId
+
     const isInDetailView = id === card.id
     if (isInDetailView) {
         return (
@@ -27,9 +30,6 @@ export default function Card({ card, index, selectedCardIndex }) {
         )
     }
     
-    const { selectedCardId, setSelectedCardId } = useNavigationData()
-    const isSelected = card.id == selectedCardId
-
     function onMouseEnter() {
         setSelectedCardId(card.id)
     }
