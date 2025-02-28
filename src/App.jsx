@@ -16,8 +16,6 @@ import './App.css'
 // TODO: 
 // - dynamic imports
 // - Add about page
-// - Convert to using react icons for card detail
-// - favicon
 
 export default function App() {
   return (

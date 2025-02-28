@@ -6,8 +6,8 @@ import { useCardsData } from '../components/CardsContext';
 import CardExpanded from '../components/CardExpanded';
 import Stars from '../components/Stars';
 
-import placeIcon from '/assets/place-icon.png'
-import calendarIcon from '/assets/calendar-icon.png'
+import { FiMapPin } from "react-icons/fi";
+import { FiCalendar } from "react-icons/fi";
 
 function getRating(emojiString) {
   return emojiString.split('⭐️').length - 1
@@ -62,11 +62,11 @@ export default function CardDetail() {
             <motion.div variants={staggeredChildVariant} className="card-detail-info-section">
               <h1>{card.Card}</h1>
               <div className="card-detail-info-row">
-                <img src={placeIcon} alt="Place Icon" />
+                <FiMapPin size={20} />
                 <h2>{`${card.Region}, ${card.Country}`}</h2>
               </div>
               <div className="card-detail-info-row">
-                <img src={calendarIcon} alt="Calendar Icon" />
+                <FiCalendar size={20} />
                 <h2>{card['Date Obtained']}</h2>
               </div>
               <p>{card['Acquisition Story']}</p>

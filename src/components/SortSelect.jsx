@@ -5,7 +5,7 @@ import { useNavigationData } from './NavigationContext'
 
 import { SORTING_DATA } from '../utils/constants'
 
-import sortIcon from '/assets/sort-icon.png'
+import { LuArrowUpDown } from "react-icons/lu";
 
 export default function SortSelect() {
     const { sortingOption, setSortingOption } = useNavigationData();
@@ -52,9 +52,10 @@ export default function SortSelect() {
                 onBlur={() => {
                     setIsHovered(false);
                 }}
+                initial={{ opacity: 0.3 }}
                 animate={{ opacity: (isHovered || isOpen) ? 1 : 0.3 }}
             >
-                <img src={sortIcon} alt="sort" />
+                <LuArrowUpDown size={20} />
             </motion.button>
 
             { /* Dropdown menu */}
