@@ -3,7 +3,7 @@ export const COLOR_ACCENT = "#003E77"
 export const SORTING_DATA = {
     color: {
         label: 'Color',
-        sortFunction: (a, b) => a.Card.localeCompare(b.Card),
+        sortFunction: (a, b) => a.Color - b.Color,
     },
     date: {
         label: 'Date Acquired',

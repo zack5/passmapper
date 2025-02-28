@@ -1,90 +1,5 @@
 [
   {
-    "Card": "Clipper Card",
-    "Region": "San Francisco Bay Area",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2019-09-15",
-    "Acquisition Story": "Acquired during college. Got free rides on the whole system when I lived off campus! Unfortunately, this got me in the habit of forgetting to tap off.",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "Distinctive, clean iconography. The esoteric reference to fast sailing ships known as \"clippers\" is sort of out of left field but also somewhat charming.",
-    "Transit System": "⭐️⭐️⭐️",
-    "Transit System Notes": "Solid connections along corridor, but abysmal last mile options after you get there. Stronger options within the city, yet some pockets still lack good transit options.",
-    "Coordinates": [
-      -122.4194,
-      37.7749
-    ],
-    "id": "clipper"
-  },
-  {
-    "Card": "Orca",
-    "Region": "Seattle",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2022-07-07",
-    "Acquisition Story": "It didn't rain once during the whole two weeks I visited in June, not sure what people are complaining about??",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "Strong iconography and amazing theme. As a nitpick, the colored bands feel a little out of place to me visually. The updated 2022 design is a 5-star though--I want one!",
-    "Transit System": "⭐️⭐️⭐️",
-    "Transit System Notes": "Excellent light rail service is paired with strong bus network, though many trips require a car.",
-    "Coordinates": [
-      -122.3321,
-      47.6062
-    ],
-    "id": "orca"
-  },
-  {
-    "Card": "Opal",
-    "Region": "Sydney",
-    "Country": "Australia",
-    "Continent": "Oceania",
-    "Date Obtained": "2022-09-01",
-    "Acquisition Story": "My parents unearthed this card from deep within a drawer before I moved to Sydney. We aren't sure when it was originally purchased! I miss getting my Opal balance reimbursed by my job :(",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "Card design is elegant and color scheme is pleasing. Name is short and catchy, though the theme feels more generic to the whole of Australia than to Sydney specifically.",
-    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Easy to live car-free in inner Sydney. Strong connectivity within the region, including to outdoorsy destinations such as the Blue Mountains and Royal National Park. Clean and safe.",
-    "Coordinates": [
-      151.2093,
-      -33.8688
-    ],
-    "id": "opal"
-  },
-  {
-    "Card": "Go Card",
-    "Region": "South East Queensland",
-    "Country": "Australia",
-    "Continent": "Oceania",
-    "Date Obtained": "2023-04-21",
-    "Acquisition Story": "I missed getting one when I visited the Gold Coast, so I enlisted a friend to pick one up when they visited Brisbane. Thanks Nate!!",
-    "Card Design": "⭐️",
-    "Design Notes": "Busy design that lacks regional identity. Name could not be more generic.",
-    "Transit System": "⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Exhaustive network that stretches to the Gold Coast. I wish I had more experience with it to better evalute its placement!",
-    "Coordinates": [
-      152.9938,
-      -27.4698
-    ],
-    "id": "go"
-  },
-  {
-    "Card": "MyWay",
-    "Region": "Canberra",
-    "Country": "Australia",
-    "Continent": "Oceania",
-    "Date Obtained": "2023-05-05",
-    "Acquisition Story": "Picked up at a newsagent near my hotel by the Italian cultural center. Felt like an appropriate way to acknowledge my Italian-Australian ancestry?",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "I find the \"TC\" very sleek and attractive, though I do question why they chose to depict the icon for Transport Canberra instead of the name MyWay. Name is too generic.",
-    "Transit System": "⭐️⭐️",
-    "Transit System Notes": "Just has a single light rail line. Bus service is decent, though I had one poor experience where a bus didn't stop for me even though I signaled and it did not look full.",
-    "Coordinates": [
-      149.13,
-      -35.2809
-    ],
-    "id": "myway"
-  },
-  {
     "Card": "Bee Card",
     "Region": "Select Regions",
     "Country": "New Zealand",
@@ -92,116 +7,16 @@
     "Date Obtained": "2023-06-15",
     "Acquisition Story": "In typical Kiwi fashion, a very kind woman pointed out where to purchase a Bee Card in the airport when I was confused.",
     "Card Design": "⭐️⭐️⭐️⭐️⭐️",
-    "Design Notes": "Card is so charming that I am willing to overlook that bees are not strongly associated with New Zealand specifically (precise origin of name is unclear to me). The golden color and elegant iconography simply cannot bee beat. Metaphor strenthens the idea of a busy, active, well-connected community. I love it.",
+    "Design Notes": "This card is so charming that I am willing to overlook that bees are not strongly associated with New Zealand specifically (precise origin of name is unclear to me). The golden color and elegant iconography simply cannot bee beat. Metaphor strenthens the idea of a busy, active, well-connected community. I love it.",
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "Covers busses in ten regions of New Zealand. Had a fine experience during my trip to Queenstown, though I can't vouch for the other cities in the Bee Card network!",
     "Coordinates": [
       168.6626,
       -45.0312
     ],
+    "Horizontal": "TRUE",
+    "Color": 50,
     "id": "bee"
-  },
-  {
-    "Card": "Myki",
-    "Region": "Victoria",
-    "Country": "Australia",
-    "Continent": "Oceania",
-    "Date Obtained": "2023-07-28",
-    "Acquisition Story": "I share Melbourninas' love of trams, but I do not feel the same about hook turns.",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "Simple design that has visual consistency with Public Transit Victoria, but I would appreciate some regional flavor. I also wish there were some more striking contrast against the card's black background.",
-    "Transit System": "⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Melbournians loved their trams enough to not pull them up in the 60s, but not enough to add a rail connection to the airport!",
-    "Coordinates": [
-      144.9631,
-      -37.8136
-    ],
-    "id": "myki"
-  },
-  {
-    "Card": "SmartRider",
-    "Region": "Perth",
-    "Country": "Australia",
-    "Continent": "Oceania",
-    "Date Obtained": "2023-12-20",
-    "Acquisition Story": "Obtaining the card was easy. Convincing my family to let me take public transit from the airport to their home was harder.",
-    "Card Design": "⭐️",
-    "Design Notes": "Design is overly busy. Why does the icon have shading to make it look 3D? And why is all of the info crammed on the front side with a blank back? And no distinctive name or theme? I'm afraid this card has zero perthonality.",
-    "Transit System": "⭐️⭐️⭐️",
-    "Transit System Notes": "An abundance of single sparsley populated residential areas makes good transit difficult to achieve, but a growing number of rail and bus lines do an admirable attempt.",
-    "Coordinates": [
-      115.8575,
-      -31.9505
-    ],
-    "id": "smartrider"
-  },
-  {
-    "Card": "MetroCard",
-    "Region": "New York City",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-05-01",
-    "Acquisition Story": "I definitely had MetroCards before this, but I must have thrown them away!",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "Iconic design, though it does feel like it was made in Word Art. Not as durable as standard transit cards. Lacking regional flavor.",
-    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common. Fare capping with OMNY is just nicer to use, though.",
-    "Coordinates": [
-      -74.006,
-      40.7128
-    ],
-    "id": "metrocard"
-  },
-  {
-    "Card": "OMNY",
-    "Region": "New York City",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-05-01",
-    "Acquisition Story": "Acquired during the early phase of the rollout when OMNY vending machines were only at major stations.",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "Strong visual language that is echoed throughout payment system. Acronym for \"One Metro New York\".",
-    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common.",
-    "Coordinates": [
-      -74.006,
-      40.7128
-    ],
-    "id": "omny"
-  },
-  {
-    "Card": "SmartLink",
-    "Region": "New York City metropolitan area",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-06-01",
-    "Acquisition Story": "Vending machines only accept cash, and are strategically placed near other similar looking yet unrelated vending machines. Final boss energy.",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "Visual design does not particularly offend me, but I can't say I love it.",
-    "Transit System": "⭐️⭐️",
-    "Transit System Notes": "Just a few lines, though a very important few lines! You can also use a MetroCard for all of these lines and more.",
-    "Coordinates": [
-      -74.0361,
-      40.7267
-    ],
-    "id": "smartlink"
-  },
-  {
-    "Card": "OPUS",
-    "Region": "Quebec",
-    "Country": "Canada",
-    "Continent": "North America",
-    "Date Obtained": "2024-06-28",
-    "Acquisition Story": "At one point when the station wasn't busy, I tried reloading my card via the app, but a grumpy older gentleman told me off in French for standing in the way. Would recommend!",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "Blue and orange is a bold choice. I would appreciate more distinctive and perhaps even Quebec-specific iconography, though this earns flavor points for the name being a pun on carte à puce (French for smart card with embedded chip).",
-    "Transit System": "⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Network within Montreal is strong. Modern open-carriage trains feel comfortable and safe--not to mention beautiful. Payment using fare pass bundles instead of simply pay-per-trip with fare capping is a minor frustration.",
-    "Coordinates": [
-      -71.2082,
-      46.8139
-    ],
-    "id": "opus"
   },
   {
     "Card": "CharlieCard",
@@ -218,109 +33,9 @@
       -71.0589,
       42.3601
     ],
+    "Horizontal": "TRUE",
+    "Color": 80,
     "id": "charlie"
-  },
-  {
-    "Card": "Go CT Card",
-    "Region": "Connecticut",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-08-18",
-    "Acquisition Story": "After calling multiple stores that allegdly sold Go CT Cards but had no idea what I was talking about, I resorted to using their online order form to have one mailed home.",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "Purple cards are rare treat! However, the name is too generic, and the barcode on the front is visually unappealing.",
-    "Transit System": "⭐️",
-    "Transit System Notes": "Only works for busses. (Disclaimer: I have not used this system)",
-    "Coordinates": [
-      -72.6978,
-      41.6032
-    ],
-    "id": "goct"
-  },
-  {
-    "Card": "Tropicard",
-    "Region": "Fort Myers",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-11-30",
-    "Acquisition Story": "Possibly the most expensive in the list? My home base was not well served by busses, so I resorted to Ubering to the nearest ticket vending machine and back.",
-    "Card Design": "⭐️⭐️⭐️⭐️",
-    "Design Notes": "Not as simple as your classic transit cards, but I find it pleasing. Uses a lot of colors that are rare in the space.",
-    "Transit System": "⭐️",
-    "Transit System Notes": "Sparse bus network across vast see of single family dwellings. I do appreciate that there is a line from the airport and a line to the beach.",
-    "Coordinates": [
-      -81.8723,
-      26.6406
-    ],
-    "id": "tropicard"
-  },
-  {
-    "Card": "The Bus",
-    "Region": "Springfield Missouri",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2024-12-13",
-    "Acquisition Story": "Quick and easy grab while in the downtown.",
-    "Card Design": "⭐️",
-    "Design Notes": "Nothing is offensive about the simple design, but I wish it had any element to tie it to Springfield in some way. And it's just called... \"The Bus\"? Could use some iteration.",
-    "Transit System": "⭐️",
-    "Transit System Notes": "Infrequent bus service around downtown and neighboring suburbs.",
-    "Coordinates": [
-      -93.2923,
-      37.2153
-    ],
-    "id": "thebus"
-  },
-  {
-    "Card": "Divia",
-    "Region": "Dijon",
-    "Country": "France",
-    "Continent": "Europe",
-    "Date Obtained": "2025-01-15",
-    "Acquisition Story": "This card is personalized! It's got my photo and everything. Had to go into a DMV-esque office to get it.",
-    "Card Design": "⭐️⭐️",
-    "Design Notes": "Somehow feels both too plain and too busy--plain in that there is a lot of whitespace, and busy in that there are a lot of competing colors and detailed clipart.",
-    "Transit System": "⭐️⭐️⭐️",
-    "Transit System Notes": "Punches way above its weight as a city of 160k. In addition to a robust bus network, Dijon has two light rail lines with beautiful rolling stock and high frequency.",
-    "Coordinates": [
-      5.0415,
-      47.322
-    ],
-    "id": "divia"
-  },
-  {
-    "Card": "Navigo",
-    "Region": "Paris",
-    "Country": "France",
-    "Continent": "Europe",
-    "Date Obtained": "2025-01-18",
-    "Acquisition Story": "Merci to the very nice agent who helped me after I accidentally bought a single-use ticket",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "I do like the little guy and I like that the symbol is echoed on busses and around the city. Solid name, though the English in Its full title \"Navigo Easy\" feels jarring. Pale blue does not feel like a particularly Parisian color to me.",
-    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Frequent, reliable, expansive, and straightforward to navigate. Although, often times I just find myself walking around because its so pleasant to do so in the city!",
-    "Coordinates": [
-      2.3522,
-      48.8566
-    ],
-    "id": "navigo"
-  },
-  {
-    "Card": "Mobib",
-    "Region": "Brussels",
-    "Country": "Belgium",
-    "Continent": "Europe",
-    "Date Obtained": "2025-01-22",
-    "Acquisition Story": "I never figured out how to buy more than one ride at a time 😅",
-    "Card Design": "⭐️⭐️⭐️⭐️⭐️",
-    "Design Notes": "I adore these little guys. Everyone is so happy to be riding the train! I want to be them!",
-    "Transit System": "⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Robust network of metro, tram, and bus lines. Well connected to neighboring cities as well.",
-    "Coordinates": [
-      4.3517,
-      50.8503
-    ],
-    "id": "mobib"
   },
   {
     "Card": "Citycard",
@@ -337,24 +52,256 @@
       3.7174,
       51.0543
     ],
+    "Horizontal": "TRUE",
+    "Color": 130,
     "id": "citycard"
   },
   {
-    "Card": "OV",
-    "Region": "Amsterdam",
-    "Country": "The Netherlands",
-    "Continent": "Europe",
-    "Date Obtained": "2025-01-27",
-    "Acquisition Story": "It was difficult to determine which vending machines sold cards and which ones did not!",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "The thresholded colors add a lot of visual noise, but for some reason I don't mind it too much. I do like the composition.",
-    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "There is no greater feeling than zooming past car traffic in dedicated grade-separated bus lanes. The metro and trams are excellent and the bicycle infrastructure is the best the world has to offer.",
+    "Card": "Clipper Card",
+    "Region": "San Francisco Bay Area",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2019-09-15",
+    "Acquisition Story": "Acquired during college. Got free rides on the whole system when I lived off campus! Unfortunately, this got me in the habit of forgetting to tap off.",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "Distinctive, clean iconography. The esoteric reference to fast sailing ships known as \"clippers\" is sort of out of left field but also somewhat charming.",
+    "Transit System": "⭐️⭐️⭐️",
+    "Transit System Notes": "Solid connections along corridor, but abysmal last mile options after you get there. Stronger options within the city, yet some pockets still lack good transit options.",
     "Coordinates": [
-      4.9041,
-      52.3676
+      -122.4194,
+      37.7749
     ],
-    "id": "ov"
+    "Horizontal": "",
+    "Color": 180,
+    "id": "clipper"
+  },
+  {
+    "Card": "Divia",
+    "Region": "Dijon",
+    "Country": "France",
+    "Continent": "Europe",
+    "Date Obtained": "2025-01-15",
+    "Acquisition Story": "This card is personalized! It's got my photo and everything. Had to go into a DMV-esque office to get it.",
+    "Card Design": "⭐️⭐️",
+    "Design Notes": "Somehow feels both too plain and too busy--plain in that there is a lot of whitespace, and busy in that there are a lot of competing colors and detailed clipart.",
+    "Transit System": "⭐️⭐️⭐️",
+    "Transit System Notes": "Punches way above its weight as a city of 160k. In addition to a robust bus network, Dijon has two light rail lines with beautiful rolling stock and high frequency.",
+    "Coordinates": [
+      5.0415,
+      47.322
+    ],
+    "Horizontal": "TRUE",
+    "Color": 10,
+    "id": "divia"
+  },
+  {
+    "Card": "Go Card",
+    "Region": "South East Queensland",
+    "Country": "Australia",
+    "Continent": "Oceania",
+    "Date Obtained": "2023-04-21",
+    "Acquisition Story": "I missed getting one when I visited the Gold Coast, so I enlisted a friend to pick one up when they visited Brisbane. Thanks Nate!!",
+    "Card Design": "⭐️",
+    "Design Notes": "I find the vignettes a bit busy and tired. Name could not be more generic.",
+    "Transit System": "⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Exhaustive network that stretches to the Gold Coast. I wish I had more experience with it to better evalute its placement!",
+    "Coordinates": [
+      152.9938,
+      -27.4698
+    ],
+    "Horizontal": "TRUE",
+    "Color": 170,
+    "id": "go"
+  },
+  {
+    "Card": "Go CT Card",
+    "Region": "Connecticut",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-08-18",
+    "Acquisition Story": "After calling multiple stores that allegdly sold Go CT Cards but had no idea what I was talking about, I resorted to using their online order form to have one mailed home.",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "Purple cards are rare treat! However, the name is too generic, and the barcode on the front is visually unappealing.",
+    "Transit System": "⭐️",
+    "Transit System Notes": "Only works for busses. (Disclaimer: I have not used this system)",
+    "Coordinates": [
+      -72.6978,
+      41.6032
+    ],
+    "Horizontal": "",
+    "Color": 0,
+    "id": "goct"
+  },
+  {
+    "Card": "MetroCard",
+    "Region": "New York City",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-05-01",
+    "Acquisition Story": "I definitely had MetroCards before this, but I must have thrown them away!",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "Iconic design, though it does feel like it was made in Word Art. Not as durable as standard transit cards. Lacking regional flavor.",
+    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common. Fare capping with OMNY is just nicer to use, though.",
+    "Coordinates": [
+      -74.006,
+      40.7128
+    ],
+    "Horizontal": "TRUE",
+    "Color": 30,
+    "id": "metrocard"
+  },
+  {
+    "Card": "Mobib",
+    "Region": "Brussels",
+    "Country": "Belgium",
+    "Continent": "Europe",
+    "Date Obtained": "2025-01-22",
+    "Acquisition Story": "I never figured out how to buy more than one ride at a time 😅",
+    "Card Design": "⭐️⭐️⭐️⭐️⭐️",
+    "Design Notes": "I adore these little guys. Everyone is so happy to be riding the train! I want to be them!",
+    "Transit System": "⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Robust network of metro, tram, and bus lines. Well connected to neighboring cities as well.",
+    "Coordinates": [
+      4.3517,
+      50.8503
+    ],
+    "Horizontal": "TRUE",
+    "Color": 140,
+    "id": "mobib"
+  },
+  {
+    "Card": "Myki",
+    "Region": "Victoria",
+    "Country": "Australia",
+    "Continent": "Oceania",
+    "Date Obtained": "2023-07-28",
+    "Acquisition Story": "I share Melbourninas' love of trams, but I do not feel the same about hook turns.",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "Simple design that has visual consistency with Public Transit Victoria, but I would appreciate some regional flavor. I also wish there were some more striking contrast against the card's black background.",
+    "Transit System": "⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Melbournians loved their trams enough to not pull them up in the 60s, but not enough to add a rail connection to the airport!",
+    "Coordinates": [
+      144.9631,
+      -37.8136
+    ],
+    "Horizontal": "TRUE",
+    "Color": 190,
+    "id": "myki"
+  },
+  {
+    "Card": "MyWay",
+    "Region": "Canberra",
+    "Country": "Australia",
+    "Continent": "Oceania",
+    "Date Obtained": "2023-05-05",
+    "Acquisition Story": "Picked up at a newsagent near my hotel by the Italian cultural center. Felt like an appropriate way to acknowledge my Italian-Australian ancestry?",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "I find the \"TC\" very sleek and attractive, though I do question why they chose to depict the icon for Transport Canberra instead of the name MyWay. Name is fairly generic.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "Just has a single light rail line. Bus service is decent, though I had one poor experience where a bus didn't stop for me even though I signaled and it did not look full.",
+    "Coordinates": [
+      149.13,
+      -35.2809
+    ],
+    "Horizontal": "TRUE",
+    "Color": 210,
+    "id": "myway"
+  },
+  {
+    "Card": "Navigo",
+    "Region": "Paris",
+    "Country": "France",
+    "Continent": "Europe",
+    "Date Obtained": "2025-01-18",
+    "Acquisition Story": "Merci to the very nice agent who helped me after I accidentally bought a single-use ticket",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "I do like the little guy and I like that the symbol is echoed on busses and around the city. Solid name, though the English in Its full title \"Navigo Easy\" feels jarring. Pale blue does not feel like a particularly Parisian color to me.",
+    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Frequent, reliable, expansive, and straightforward to navigate. Although, often times I just find myself walking around because its so pleasant to do so in the city!",
+    "Coordinates": [
+      2.3522,
+      48.8566
+    ],
+    "Horizontal": "",
+    "Color": 100,
+    "id": "navigo"
+  },
+  {
+    "Card": "OMNY",
+    "Region": "New York City",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-05-01",
+    "Acquisition Story": "Acquired during the early phase of the rollout when OMNY vending machines were only at major stations.",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "Strong visual language that is echoed throughout payment system. Acronym for \"One Metro New York\".",
+    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common.",
+    "Coordinates": [
+      -74.006,
+      40.7128
+    ],
+    "Horizontal": "",
+    "Color": 220,
+    "id": "omny"
+  },
+  {
+    "Card": "Opal",
+    "Region": "Sydney",
+    "Country": "Australia",
+    "Continent": "Oceania",
+    "Date Obtained": "2022-09-01",
+    "Acquisition Story": "My parents unearthed this card from deep within a drawer before I moved to Sydney. We aren't sure when it was originally purchased! I miss getting my Opal balance reimbursed by my job :(",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "Card design is elegant and color scheme is pleasing. Name is short and catchy, though the theme feels more generic to the whole of Australia than to Sydney specifically.",
+    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Easy to live car-free in inner Sydney. Strong connectivity within the region, including to outdoorsy destinations such as the Blue Mountains and Royal National Park. Clean and safe.",
+    "Coordinates": [
+      151.2093,
+      -33.8688
+    ],
+    "Horizontal": "TRUE",
+    "Color": 200,
+    "id": "opal"
+  },
+  {
+    "Card": "OPUS",
+    "Region": "Quebec",
+    "Country": "Canada",
+    "Continent": "North America",
+    "Date Obtained": "2024-06-28",
+    "Acquisition Story": "At one point when the station wasn't busy, I tried reloading my card via the app, but a grumpy older gentleman told me off in French for standing in the way. Would recommend!",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "Blue and orange is a bold choice. I would appreciate more distinctive and perhaps even Quebec-specific iconography, though this earns flavor points for the name being a pun on carte à puce (French for smart card with embedded chip).",
+    "Transit System": "⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Network within Montreal is strong. Modern open-carriage trains feel comfortable and safe--not to mention beautiful. Payment using fare pass bundles instead of simply pay-per-trip with fare capping is a minor frustration.",
+    "Coordinates": [
+      -71.2082,
+      46.8139
+    ],
+    "Horizontal": "TRUE",
+    "Color": 150,
+    "id": "opus"
+  },
+  {
+    "Card": "Orca",
+    "Region": "Seattle",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2022-07-07",
+    "Acquisition Story": "It didn't rain once during the whole two weeks I visited in June, not sure what people are complaining about??",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "Strong iconography and amazing theme. As a nitpick, the colored bands feel a little out of place to me visually. The updated 2022 design is a 5-star though--I want one!",
+    "Transit System": "⭐️⭐️⭐️",
+    "Transit System Notes": "Excellent light rail service is paired with strong bus network, though many trips require a car.",
+    "Coordinates": [
+      -122.3321,
+      47.6062
+    ],
+    "Horizontal": "TRUE",
+    "Color": 160,
+    "id": "orca"
   },
   {
     "Card": "Oura",
@@ -371,6 +318,103 @@
       4.5242,
       45.4473
     ],
+    "Horizontal": "",
+    "Color": 110,
     "id": "oura"
+  },
+  {
+    "Card": "OV",
+    "Region": "Amsterdam",
+    "Country": "The Netherlands",
+    "Continent": "Europe",
+    "Date Obtained": "2025-01-27",
+    "Acquisition Story": "It was difficult to determine which vending machines sold cards and which ones did not!",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "The thresholded colors add a lot of visual noise, but for some reason I don't mind it too much. I do like the composition.",
+    "Transit System": "⭐️⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "There is no greater feeling than zooming past car traffic in dedicated grade-separated bus lanes. The metro and trams are excellent and the bicycle infrastructure is the best the world has to offer.",
+    "Coordinates": [
+      4.9041,
+      52.3676
+    ],
+    "Horizontal": "TRUE",
+    "Color": 120,
+    "id": "ov"
+  },
+  {
+    "Card": "SmartLink",
+    "Region": "New York City metropolitan area",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-06-01",
+    "Acquisition Story": "Vending machines only accept cash, and are strategically placed near other similar looking yet unrelated vending machines. Final boss energy.",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "Visual design does not particularly offend me, but I can't say I love it.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "Just a few lines, though a very important few lines! You can also use a MetroCard for all of these lines and more.",
+    "Coordinates": [
+      -74.0361,
+      40.7267
+    ],
+    "Horizontal": "TRUE",
+    "Color": 90,
+    "id": "smartlink"
+  },
+  {
+    "Card": "SmartRider",
+    "Region": "Perth",
+    "Country": "Australia",
+    "Continent": "Oceania",
+    "Date Obtained": "2023-12-20",
+    "Acquisition Story": "Obtaining the card was easy. Convincing my family to let me take public transit from the airport to their home was harder.",
+    "Card Design": "⭐️",
+    "Design Notes": "Design is overly busy. Why does the icon have shading to make it look 3D? And why is all of the info crammed on the front side with a blank back? And no distinctive name or theme? I'm afraid this card has zero perthonality.",
+    "Transit System": "⭐️⭐️⭐️",
+    "Transit System Notes": "An abundance of sparsley populated residential areas makes good transit difficult to achieve, but a growing number of rail and bus lines do an admirable attempt.",
+    "Coordinates": [
+      115.8575,
+      -31.9505
+    ],
+    "Horizontal": "TRUE",
+    "Color": 70,
+    "id": "smartrider"
+  },
+  {
+    "Card": "The Bus",
+    "Region": "Springfield Missouri",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-12-13",
+    "Acquisition Story": "Quick and easy grab while in the downtown.",
+    "Card Design": "⭐️",
+    "Design Notes": "Nothing is offensive about the simple design, but I wish it had any element to tie it to Springfield in some way. And it's just called... \"The Bus\"? Could use some iteration.",
+    "Transit System": "⭐️",
+    "Transit System Notes": "Infrequent bus service around downtown and neighboring suburbs.",
+    "Coordinates": [
+      -93.2923,
+      37.2153
+    ],
+    "Horizontal": "TRUE",
+    "Color": 60,
+    "id": "thebus"
+  },
+  {
+    "Card": "Tropicard",
+    "Region": "Fort Myers",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2024-11-30",
+    "Acquisition Story": "Possibly the most expensive in the list? My home base was not well served by busses, so I resorted to Ubering to the nearest ticket vending machine and back.",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "Not as simple as your classic transit cards, but I find it pleasing. Uses a lot of colors that are rare in the space.",
+    "Transit System": "⭐️",
+    "Transit System Notes": "Sparse bus network across vast see of single family dwellings. I do appreciate that there is a line from the airport and a line to the beach.",
+    "Coordinates": [
+      -81.8723,
+      26.6406
+    ],
+    "Horizontal": "TRUE",
+    "Color": 20,
+    "id": "tropicard"
   }
 ]

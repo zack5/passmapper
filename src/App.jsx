@@ -14,12 +14,10 @@ import Layout from './components/Layout'
 import './App.css'
 
 // TODO: 
-// - Add card sorting
-// - Improve map visuals (label overlapping, remove country borders)
-// - Hovering map pin selects card from holder
-// - Back button to map from card detail
+// - Make card detail rotate to correct orientation
+// - Make card sorting stable (keep ref of cards)
+// - Map zoom into continents
 // - Add about page
-// - Add stats page
 
 export default function App() {
   return (
