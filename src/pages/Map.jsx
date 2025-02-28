@@ -29,11 +29,9 @@ const CONTINENT_TRANSFORMS = {
 export default function Map() {
   const timeoutId = useRef(null);
   const [continentHovered, setContinentHovered] = useState(null);
-  const [continentSelected, setContinentSelected] = useState(null);
-
 
   const cards = useCardsData();
-  const { selectedCardId, setSelectedCardId } = useNavigationData()
+  const { selectedCardId, setSelectedCardId, continentSelected, setContinentSelected } = useNavigationData()
 
   function handleMouseEnter(geo) {
     const currentContinent = continentMapping[geo.id];
@@ -56,8 +54,8 @@ export default function Map() {
     }, 50);
   }
 
-  function handleMouseClick() {
-    console.log(continentSelected, continentHovered)
+  function handleMouseClick(event) {
+    event.stopPropagation();
     if (continentSelected) {
       setContinentSelected(null);
     } else {
@@ -77,17 +75,18 @@ export default function Map() {
     <AnimatePresence mode="wait">
       <motion.div
         className="map-container"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.3 }}
-        onClick={() => handleMouseClick()}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        onClick={(event) => handleMouseClick(event)}
       >
         <ComposableMap
           continent={continentHovered}
           viewBox="30 68 800 415"
         >
           <motion.g
+            initial={false}
             animate={{
               translateX: CONTINENT_TRANSFORMS[continentSelected]?.translateX || 0,
               translateY: CONTINENT_TRANSFORMS[continentSelected]?.translateY || 0,
@@ -108,7 +107,7 @@ export default function Map() {
                       geography={geo}
                       onMouseEnter={() => handleMouseEnter(geo)}
                       onMouseLeave={() => handleMouseLeave()}
-                      onClick={() => handleMouseClick()}
+                      onClick={(event) => handleMouseClick(event)}
                       onMouseDown={(event) => event.preventDefault()}
                       style={{
                         default: commonStyle,
@@ -128,9 +127,14 @@ export default function Map() {
                   key={card.Card}
                   coordinates={card.Coordinates}
                   style={{ transformOrigin: "center" }}
+                  onClick={(event) => event.stopPropagation()}
                 >
-                  <Link to={`${card.id}`} onMouseEnter={() => setSelectedCardId(card.id)}>
+                  <Link 
+                    to={`${card.id}`} 
+                    onMouseEnter={() => setSelectedCardId(card.id)}
+                  >
                     <motion.g
+                      initial={false}
                       animate={{
                         scale: (selectedCardId === card.id ? 1.2 : 0.7) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
                         y: selectedCardId === card.id ? -19 : -16,
