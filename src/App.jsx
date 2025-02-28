@@ -14,9 +14,11 @@ import Layout from './components/Layout'
 import './App.css'
 
 // TODO: 
-// - Map zoom into continents
+// - Back to map maintains zoom
+// - map icons to svg
 // - Add about page
 // - something is weird about map back button; reconcile with settings back
+// - favicon
 
 export default function App() {
   return (
