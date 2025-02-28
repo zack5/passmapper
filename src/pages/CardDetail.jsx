@@ -42,19 +42,6 @@ export default function CardDetail() {
 
   return (
     <div className="card-detail-page">
-
-      {/* Back Button */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          variants={staggeredChildVariant}
-          initial="hidden"
-          animate="show"
-          className="card-detail-back" 
-        >
-          <Link to="/">‹ Map</Link>
-        </motion.div>
-      </AnimatePresence>
-
       <div className="card-detail-container">
         {/* Card Image */}
         <AnimatePresence mode="wait">

@@ -14,6 +14,8 @@ import Layout from './components/Layout'
 import './App.css'
 
 // TODO: 
+// - dynamic imports
+// - delay map entry until load
 // - Back to map maintains zoom
 // - Place name tooltips
 // - Add about page

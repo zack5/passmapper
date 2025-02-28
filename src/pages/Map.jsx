@@ -109,6 +109,7 @@ export default function Map() {
                       onMouseEnter={() => handleMouseEnter(geo)}
                       onMouseLeave={() => handleMouseLeave()}
                       onClick={() => handleMouseClick()}
+                      onMouseDown={(event) => event.preventDefault()}
                       style={{
                         default: commonStyle,
                         hover: commonStyle,

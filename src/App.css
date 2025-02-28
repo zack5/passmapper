@@ -161,6 +161,31 @@ main {
     justify-content: center;
 }
 
+.card-cancel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 100px;
+}
+
+.card-cancel-button {
+    border: none;
+    padding: 0;
+    z-index: 1000;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.card-cancel-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #b1b1b1;
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.40);
+}
+
+
 /* --- CARD DETAIL ---*/
 
 .card-detail-page {
@@ -233,11 +258,6 @@ main {
 
 /* --- MAP ---*/
 
-svg {
-    display: inline-block;
-    vertical-align: middle;
-}
-  
 .map-container {
     width: 80%;
 }

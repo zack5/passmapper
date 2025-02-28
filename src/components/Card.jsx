@@ -2,14 +2,29 @@ import { Link, useParams } from "react-router-dom";
 
 import { useNavigationData } from "./NavigationContext";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
+import { ImCancelCircle } from "react-icons/im";
+import { CancelIcon } from "./CancelIcon"
 export default function Card({ card, index, selectedCardIndex }) {
     const { id } = useParams();
 
     const isInDetailView = id === card.id
     if (isInDetailView) {
-        return <div className="card" />
+        return (
+            <div className="card card-cancel-container">
+                <Link to="/" className="card-cancel-button">
+                    <motion.button className="card-cancel-button" key={`cancel-${card.id}`}
+                        initial={{ opacity: 0.5 }}
+                        whileHover={{ scale: 1.1, opacity: 1 }}
+                        whileTap={{ scale: 0.9, opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        <CancelIcon className="card-cancel-icon" />
+                    </motion.button>
+                </Link>
+            </div>
+        )
     }
     
     const { selectedCardId, setSelectedCardId } = useNavigationData()
