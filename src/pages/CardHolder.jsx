@@ -9,7 +9,7 @@ import SortSelect from '../components/SortSelect'
 import { SORTING_DATA } from '../utils/constants'
 
 export default function CardHolder() {
-  const { sortingOption, selectedCardId } = useNavigationData();
+  const { sortingOption, selectedCardId, setCardHolderHovered } = useNavigationData();
   
   const cards = useRef(useCardsData())
   const previousSortingOption = useRef(null)
@@ -39,7 +39,12 @@ export default function CardHolder() {
 
   return (
     <>
-      <div className="card-container" style={gridColumnStyle}>
+      <div
+        className="card-container"
+        style={gridColumnStyle}
+        onMouseEnter={() => setCardHolderHovered(true)}
+        onMouseLeave={() => setCardHolderHovered(false)}
+      >
         {cardElements}
       </div>
       <SortSelect />
