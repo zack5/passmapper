@@ -43,6 +43,8 @@ export default function CardDetail() {
 
   const backButtonX = card.Horizontal ? 0 : CARD_EXPANDED_HEIGHT - CARD_EXPANDED_WIDTH
 
+  const location = card.Region === card.Country ? card.Region : `${card.Region}, ${card.Country}`
+
   return (
     <div className="card-detail-page">
       <div className="card-detail-content">
@@ -81,7 +83,7 @@ export default function CardDetail() {
               <h1>{card.Card}</h1>
               <div className="card-detail-info-row">
                 <FiMapPin size={20} />
-                <h2>{`${card.Region}, ${card.Country}`}</h2>
+                <h2>{location}</h2>
               </div>
               <div className="card-detail-info-row">
                 <FiCalendar size={20} />
