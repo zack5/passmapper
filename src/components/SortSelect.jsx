@@ -42,6 +42,36 @@ export default function SortSelect() {
         setIsHovered(false);
     }
 
+    const style = {
+        control: (base, state) => ({
+          ...base,
+          backgroundColor: "var(--color-background)",
+          borderColor: state.isFocused ? "var(--color-accent)" : "#ccc",
+          boxShadow: state.isFocused ? "0 0 5px var(--color-accent)" : "none",
+          "&:hover": { borderColor: "var(--color-accent)" },
+        }),
+        menu: (base) => ({
+          ...base,
+          backgroundColor: "var(--color-background)",
+        }),
+        option: (base, { isFocused, isSelected }) => ({
+          ...base,
+          backgroundColor: isSelected
+            ? "var(--color-accent)"
+            : isFocused
+                ? "var(--color-sort-select-hover)"
+                : "var(--color-background)",
+          color: isSelected ? "#fff" : "var(--color-text)",
+          "&:hover": {
+            backgroundColor: isSelected ? "var(--color-accent)" : "var(--color-sort-select-hover)",
+          },
+        }),
+        singleValue: (base) => ({
+          ...base,
+          color: "var(--color-text)",
+        }),
+      };
+
     return (
         <motion.div className="sort-select-container" 
             onMouseEnter={onMouseEnter}
@@ -55,7 +85,7 @@ export default function SortSelect() {
                 initial={{ opacity: 0.3 }}
                 animate={{ opacity: (isHovered || isOpen) ? 1 : 0.3 }}
             >
-                <LuArrowUpDown size={20} />
+                <LuArrowUpDown size={20} color="var(--color-text)" />
             </motion.button>
 
             { /* Dropdown menu */}
@@ -74,6 +104,7 @@ export default function SortSelect() {
                         onBlur={() => {
                             setIsHovered(false);
                         }}
+                        styles={style}
                     />
                 </motion.div>}
             </AnimatePresence>

@@ -1,12 +1,14 @@
 import { NavLink, Link } from 'react-router-dom'
 
-import projectLogo from '/assets/passmapper.png'
-
-import { COLOR_ACCENT } from '../utils/constants'
+import { Logo } from './Logo'
+import { useTheme } from './ThemeContext'
+import DarkModeToggle from './DarkModeToggle'
 
 export default function Header() {
+    const { colors } = useTheme()
+
     const activeStyles = {
-        color: COLOR_ACCENT,
+        color: colors.accent,
         backgroundColor: 'transparent',
         outline: '0'
     }
@@ -19,7 +21,7 @@ export default function Header() {
     <header>
         <div className='logo-container'>
             <Link to="/" className='logo-link'>
-                <img src={projectLogo} className="logo" alt="Pass logo" />
+                <Logo fill="var(--color-accent)" className="logo" />
                 <span>Transit card collection tracker</span>
             </Link>
         </div>
@@ -28,7 +30,9 @@ export default function Header() {
             <NavLink to="/stats" style={getActiveStyles}>Stats</NavLink>
             <NavLink to="/about" style={getActiveStyles}>About</NavLink>
         </div>
-        <div className='nav-todo'></div>
+        <div className='nav-more-options'>
+            <DarkModeToggle />
+        </div>
     </header>
     );
 }

@@ -1,9 +1,38 @@
 :root {
     --color-accent: #003E77;
+    --color-text: #464646;
+    --color-background: white;
+    --color-button-border: #cccccc;
+    --color-link: #b1b1b1;
+    --color-nav-hover: #f6f6f6;
+    --color-footer: #f6f6f6;
+    --color-table-text: #464646;
+    --color-table-header-background: #e1e1e1;
+    --color-table-even-row-background: #f6f6f6;
+    --color-map: #cccccc;
+    --color-map-hover: #b1b1b1;
+    --color-sort-select-hover: #e1e1e1;
+}
+
+.dark {
+    --color-accent: #4181ca;
+    --color-text: #e3e3e3;
+    --color-background: #1c1c22;
+    --color-button-border: #cccccc;
+    --color-link: #888;
+    --color-nav-hover-background: #222222;
+    --color-footer-background: #222222;
+    --color-table-text: #bbb;
+    --color-table-header-background: #47474c;
+    --color-table-even-row-background: #313137;
+    --color-map: #47474c;
+    --color-map-hover: #5f5f63;
+    --color-sort-select-hover: #47474c;
 }
 
 main {
-    color: #353535;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 h1 {
@@ -25,8 +54,8 @@ p {
 }
 
 button {
-    background-color: white;
-    border: 1px solid #cccccc;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-button-border);
     border-radius: 5px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -47,7 +76,7 @@ header {
     padding-inline: 50px;
     box-sizing: border-box;
 
-    background-color: white;
+    background-color: var(--color-background);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
     position: absolute;
     z-index: 1000;
@@ -59,7 +88,8 @@ header>div {
 }
 
 .logo {
-    width: 160px;
+    width: 10rem;
+    height: 1.6rem;
 }
 
 .logo-link {
@@ -69,9 +99,10 @@ header>div {
     font-size: 0.85rem;
 }
 
-.logo-container {
-    padding-top: 0.3rem;
-    margin-block: auto;
+.logo-container > svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: var(--color-accent);
 }
 
 .nav-container {
@@ -85,7 +116,7 @@ header>div {
 
 a {
     text-decoration: none;
-    color: #b1b1b1;
+    color: var(--color-link);
 }
 
 a:hover {
@@ -98,9 +129,17 @@ a:hover {
 
 .nav-container a:hover {
     text-decoration: none;
-    background-color: #f6f6f6;
-    outline: 5px solid #f6f6f6;
+    background-color: var(--color-nav-hover-background);
+    outline: 5px solid var(--color-nav-hover-background);
     border-radius: 999px;
+}
+
+.nav-more-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
 }
 
 /* --- FOOTER ---*/
@@ -114,10 +153,10 @@ footer {
     padding-inline: 50px;
     box-sizing: border-box;
 
-    background-color: #f6f6f6;
+    background-color: var(--color-footer-background);
     z-index: 1000;
 
-    color: #b1b1b1;
+    color: var(--color-link);
 }
 
 .footer-nav-container {
@@ -186,7 +225,7 @@ main {
 .card-cancel-icon {
     width: 2rem;
     height: 2rem;
-    color: #b1b1b1;
+    color: var(--color-link);
     border-radius: 50%;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.40);
 }
@@ -302,17 +341,17 @@ main {
 
 table {
     font-size: 1rem;
-    color: #464646;
+    color: var(--color-table-text);
     width: 100%;
     table-layout: fixed;
 }
 
 thead {
-    background-color: #e1e1e1;
+    background-color: var(--color-table-header-background);
 }
 
 tr:nth-child(even) {
-    background-color: #f6f6f6;
+    background-color: var(--color-table-even-row-background);
 }
 
 .sort-visuals {
@@ -341,6 +380,7 @@ th > button  {
     border: none;
     background-color: transparent;
     box-shadow: none;
+    color: var(--color-text);
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
@@ -350,7 +390,7 @@ th > button  {
 }
 
 td > a {
-    color: #464646;
+    color: var(--color-table-text);
 }
 
 /* --- ABOUT ---*/

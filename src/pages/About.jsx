@@ -1,7 +1,7 @@
 import { IoMail, IoLogoLinkedin, IoLogoGithub } from "react-icons/io5";
 
 import zack from "/assets/zack.jpg";
-import pokeball from "/assets/pokeball.jpg";
+import pokeball from "/assets/pokeball.png";
 
 export default function About() {
   return (

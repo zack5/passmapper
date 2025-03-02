@@ -104,7 +104,7 @@ export default function Map() {
                   geographies.map((geo) => {
                     const fillColor = (
                       (!continentSelected && continentHovered === continentMapping[geo.id])
-                      || continentSelected === continentMapping[geo.id]) ? "#b1b1b1" : "#ccc";
+                      || continentSelected === continentMapping[geo.id]) ? "var(--color-map-hover)" : "var(--color-map)";
                     const commonStyle = { fill: fillColor, transition: "fill 0.5s" };
                     return (
                       <Geography

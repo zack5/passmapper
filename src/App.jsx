@@ -9,6 +9,7 @@ import Stats from './pages/Stats'
 
 import { CardsProvider } from './components/CardsContext'
 import { NavigationProvider } from './components/NavigationContext'
+import { ThemeProvider } from './components/ThemeContext'
 import Layout from './components/Layout'
 
 import './App.css'
@@ -17,19 +18,21 @@ export default function App() {
   return (
     <CardsProvider>
       <NavigationProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Layout />} >
-              <Route element={<CardHolder />} >
-                <Route index element={<Map />} />
-                <Route path=":id" element={<CardDetail />} />
+        <ThemeProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />} >
+                <Route element={<CardHolder />} >
+                  <Route index element={<Map />} />
+                  <Route path=":id" element={<CardDetail />} />
+                </Route>
+                <Route path="about" element={<About />} />
+                <Route path="stats" element={<Stats />} />
+                <Route path="*" element={<NotFound />} />
               </Route>
-              <Route path="about" element={<About />} />
-              <Route path="stats" element={<Stats />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
       </NavigationProvider>
     </CardsProvider>
   )
