@@ -6,9 +6,9 @@ import { Tooltip } from 'react-tooltip';
 
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
+import { getCardLocationString } from '../utils/utils';
 
 import continentMapping from '/data/country_to_continent.json';
-
 const CONTINENT_TRANSFORMS = {
   "North America": {
     translateX: 780,
@@ -136,7 +136,7 @@ export default function Map() {
                     onMouseEnter={() => setMapPinHovered(true)}
                     onMouseLeave={() => setMapPinHovered(false)}
                     data-tooltip-id={selectedCardId === card.id ? `marker` : null}
-                    data-tooltip-content={`${card.Region}, ${card.Country}`}
+                    data-tooltip-content={getCardLocationString(card)}
                   >
                     <Link
                       to={`${card.id}`}

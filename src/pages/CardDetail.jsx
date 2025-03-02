@@ -6,6 +6,7 @@ import { useCardsData } from '../components/CardsContext';
 import CardExpanded from '../components/CardExpanded';
 import Stars from '../components/Stars';
 import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
+import { getCardLocationString } from '../utils/utils';
 
 import { FiMapPin } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
@@ -42,8 +43,6 @@ export default function CardDetail() {
   }
 
   const backButtonX = card.Horizontal ? 0 : CARD_EXPANDED_HEIGHT - CARD_EXPANDED_WIDTH
-
-  const location = card.Region === card.Country ? card.Region : `${card.Region}, ${card.Country}`
 
   return (
     <div className="card-detail-page">
@@ -83,7 +82,7 @@ export default function CardDetail() {
               <h1>{card.Card}</h1>
               <div className="card-detail-info-row">
                 <FiMapPin size={20} />
-                <h2>{location}</h2>
+                <h2>{getCardLocationString(card)}</h2>
               </div>
               <div className="card-detail-info-row">
                 <FiCalendar size={20} />
