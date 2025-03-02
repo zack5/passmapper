@@ -5,6 +5,7 @@ import { useCardsData } from '../components/CardsContext';
 
 import CardExpanded from '../components/CardExpanded';
 import Stars from '../components/Stars';
+import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
 
 import { FiMapPin } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
@@ -40,8 +41,25 @@ export default function CardDetail() {
     }
   }
 
+  const backButtonX = card.Horizontal ? 0 : CARD_EXPANDED_HEIGHT - CARD_EXPANDED_WIDTH
+
   return (
     <div className="card-detail-page">
+      <div className="card-detail-content">
+        {/* Back Button */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            variants={staggeredChildVariant}
+            initial={{opacity: 0, x: backButtonX}}
+            animate={{opacity: 1, x: backButtonX}}
+            exit={{opacity: 0, x: backButtonX}}
+            transition={{duration: 0.25}}
+            className="card-detail-back"
+        >
+          <Link to="/">‹ Map</Link>
+        </motion.div>
+      </AnimatePresence>
+
       <div className="card-detail-container">
         {/* Card Image */}
         <AnimatePresence mode="wait">
@@ -92,6 +110,7 @@ export default function CardDetail() {
           </motion.div>
         </AnimatePresence>
       </div>
+    </div>
     </div>
 
   );

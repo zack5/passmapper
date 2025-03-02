@@ -15,16 +15,16 @@ export default function About() {
           <h2>Zack Cinquini</h2>
           <ul>
             <li>
-              <span>👨‍💻</span>
-              <span>Software engineer</span>
+              <div className="about-me-text-icon">👨‍💻</div>
+              <div>Software engineer</div>
             </li>
             <li>
-              <span>🚊</span>
-              <span>Transit lover</span>
+              <div className="about-me-text-icon">🚊</div>
+              <div>Transit lover</div>
             </li>
             <li>
-              <img style={{width: "1rem", height: "1rem"}} src={pokeball} alt="Pokeball"/>
-              <span>Smoliv fan</span>
+              <div className="about-me-text-icon"><img style={{width: "1rem", height: "1rem"}} src={pokeball} alt="Pokeball"/></div>
+              <div>Smoliv fan</div>
             </li>
           </ul>
         </div>

@@ -73,6 +73,8 @@ export default function Map() {
     };
   }, []);
 
+  const hasActivePin = cardHolderHovered || mapPinHovered
+
   return (
     <>
       <AnimatePresence mode="wait">
@@ -143,8 +145,8 @@ export default function Map() {
                       <motion.g
                         initial={false}
                         animate={{
-                          scale: (selectedCardId === card.id ? 1.2 : 0.7) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
-                          y: selectedCardId === card.id ? -18 : -16,
+                          scale: (hasActivePin && selectedCardId === card.id ? 1.2 : 0.7) / (Math.sqrt(CONTINENT_TRANSFORMS[continentSelected]?.scale || 1)),
+                          y: (hasActivePin && selectedCardId) === card.id ? -18.5 : -16,
                           x: -12
                         }}
                         fill="var(--color-accent)"
@@ -159,7 +161,7 @@ export default function Map() {
           </ComposableMap>
         </motion.div>
       </AnimatePresence>
-      <Tooltip id={`marker`} isOpen={cardHolderHovered || mapPinHovered} />
+      <Tooltip id={`marker`} isOpen={hasActivePin} />
     </>
   )
 }

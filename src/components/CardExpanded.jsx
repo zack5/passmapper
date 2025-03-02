@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 
+import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
+
 export default function CardExpanded({ card }) {
 
     const zIndex = 999
 
     const key = `detail-card-${card.id}`
 
-    const w = 197
-    const h = 313
+    const w = CARD_EXPANDED_WIDTH
+    const h = CARD_EXPANDED_HEIGHT
     const offset = (w - h) / 2
 
     let style = {

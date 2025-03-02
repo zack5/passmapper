@@ -1,3 +1,6 @@
+export const CARD_EXPANDED_WIDTH = 197
+export const CARD_EXPANDED_HEIGHT = 313
+
 export const COLOR_ACCENT = "#003E77"
 
 export const SORTING_DATA = {
