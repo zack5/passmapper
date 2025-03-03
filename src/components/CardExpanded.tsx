@@ -33,6 +33,7 @@ export default function CardExpanded({ card }: { card: CardData }) {
 
     const containerStyle = {
         width: Math.max(w, h) + "px",
+        height: (card.Horizontal ? w : h) + "px",
     }
 
     return (
