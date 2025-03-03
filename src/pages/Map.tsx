@@ -3,40 +3,25 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 import { Tooltip } from 'react-tooltip';
+import { Feature } from 'geojson';
 
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
+import { CONTINENT_TRANSFORMS, CONTINENT } from '../utils/constants';
 import { getCardLocationString } from '../utils/utils';
 
 import continentMapping from '/data/country_to_continent.json';
-const CONTINENT_TRANSFORMS = {
-  "North America": {
-    translateX: 780,
-    translateY: 350,
-    scale: 3,
-  },
-  "Europe": {
-    translateX: 160,
-    translateY: 900,
-    scale: 6,
-  },
-  "Oceania": {
-    translateX: -940,
-    translateY: -350,
-    scale: 3,
-  },
-}
 
 export default function Map() {
-  const timeoutId = useRef(null);
-  const [continentHovered, setContinentHovered] = useState(null);
+  const timeoutId = useRef<NodeJS.Timeout | null>(null);
+  const [continentHovered, setContinentHovered] = useState<CONTINENT>('');
   const [mapPinHovered, setMapPinHovered] = useState(false);
 
   const cards = useCardsData();
   const { selectedCardId, setSelectedCardId, continentSelected, setContinentSelected, cardHolderHovered } = useNavigationData()
 
-  function handleMouseEnter(geo) {
-    const currentContinent = continentMapping[geo.id];
+  function handleMouseEnter(geo: Feature) {
+    const currentContinent = continentMapping[geo?.id || ''];
     if (!(currentContinent in CONTINENT_TRANSFORMS)) {
       return;
     }
@@ -52,14 +37,14 @@ export default function Map() {
 
   function handleMouseLeave() {
     timeoutId.current = setTimeout(() => {
-      setContinentHovered(null);
+      setContinentHovered('');
     }, 50);
   }
 
-  function handleMouseClick(event) {
+  function handleMouseClick(event: React.MouseEvent<SVGPathElement | HTMLDivElement>) {
     event.stopPropagation();
     if (continentSelected) {
-      setContinentSelected(null);
+      setContinentSelected('');
     } else {
       setContinentSelected(continentHovered);
     }
@@ -84,18 +69,17 @@ export default function Map() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          onClick={(event) => handleMouseClick(event)}
+          onClick={(event: React.MouseEvent<HTMLDivElement>) => handleMouseClick(event)}
         >
           <ComposableMap
-            continent={continentHovered}
             viewBox="30 68 800 415"
           >
             <motion.g
               initial={false}
               animate={{
-                translateX: CONTINENT_TRANSFORMS[continentSelected]?.translateX || 0,
-                translateY: CONTINENT_TRANSFORMS[continentSelected]?.translateY || 0,
-                scale: CONTINENT_TRANSFORMS[continentSelected]?.scale || 1,
+                translateX: CONTINENT_TRANSFORMS[continentSelected as CONTINENT]?.translateX || 0,
+                translateY: CONTINENT_TRANSFORMS[continentSelected as CONTINENT]?.translateY || 0,
+                scale: CONTINENT_TRANSFORMS[continentSelected as CONTINENT]?.scale || 1,
               }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
@@ -112,7 +96,7 @@ export default function Map() {
                         geography={geo}
                         onMouseEnter={() => handleMouseEnter(geo)}
                         onMouseLeave={() => handleMouseLeave()}
-                        onClick={(event) => handleMouseClick(event)}
+                        onClick={(event: React.MouseEvent<SVGPathElement>) => handleMouseClick(event)}
                         onMouseDown={(event) => event.preventDefault()}
                         style={{
                           default: commonStyle,
@@ -131,7 +115,7 @@ export default function Map() {
                   <Marker
                     key={card.Card}
                     coordinates={card.Coordinates}
-                    style={{ transformOrigin: "center" }}
+                    // style={{ transformOrigin: "center" }}
                     onClick={(event) => event.stopPropagation()}
                     onMouseEnter={() => setMapPinHovered(true)}
                     onMouseLeave={() => setMapPinHovered(false)}

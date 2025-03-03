@@ -2,11 +2,15 @@ import { Link, useParams } from "react-router-dom";
 
 import { useNavigationData } from "./NavigationContext";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { ImCancelCircle } from "react-icons/im";
-import { CancelIcon } from "./CancelIcon"
-export default function Card({ card, index, selectedCardIndex }) {
+import { CardData } from "../utils/types";
+
+export default function Card({ card, index, selectedCardIndex }: {
+    card: CardData,
+    index: number,
+    selectedCardIndex: number
+}) {
     const { id } = useParams();
 
     const { selectedCardId, setSelectedCardId } = useNavigationData()
@@ -36,7 +40,7 @@ export default function Card({ card, index, selectedCardIndex }) {
                 layoutId={`card-${card.id}`}
                 className="card card-shadow"
                 src={`/cards/${card.id}.` + (card.id === "metrocard" ? "png" : "jpg")}
-                alt={card.name}
+                alt={card.Card}
                 style={{
                     zIndex: zIndex,
                 }}

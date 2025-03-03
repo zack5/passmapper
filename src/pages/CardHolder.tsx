@@ -12,11 +12,13 @@ export default function CardHolder() {
   const { sortingOption, selectedCardId, setCardHolderHovered } = useNavigationData();
   
   const cards = useRef(useCardsData())
-  const previousSortingOption = useRef(null)
+  const previousSortingOption = useRef('')
 
   if (sortingOption !== previousSortingOption.current) {
     cards.current = [...cards.current].sort(SORTING_DATA[sortingOption].sortFunction)
-    previousSortingOption.current = sortingOption
+    if (previousSortingOption) {
+      previousSortingOption.current = sortingOption
+    }
   }
 
   const selectedCardIndex = cards.current.findIndex(card => card.id === selectedCardId)

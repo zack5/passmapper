@@ -1,4 +1,8 @@
-export const CancelIcon = (props) => {
+import React from 'react';
+
+interface CancelIconProps extends React.SVGProps<SVGSVGElement> {}
+
+export const CancelIcon = (props: CancelIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

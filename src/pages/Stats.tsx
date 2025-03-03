@@ -2,26 +2,29 @@ import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 
 import { useCardsData } from '../components/CardsContext';
+import { CardData } from '../utils/types';
 
 import { SORTING_DATA } from '../utils/constants';
 
 export default function Stats() {
-  const cards = useRef(useCardsData());
-  const [sortMethod, setSortMethod] = useState("Card Ascending");
+  const cards = useRef(useCardsData() || []);
+  const [sortMethod, setSortMethod] = useState<SortMethodType>("Card Ascending");
 
   const sortFunctions = {
-    "Card Ascending": (a, b) => SORTING_DATA.name.sortFunction(a, b),
-    "Card Descending": (a, b) => SORTING_DATA.name.sortFunction(b, a),
-    "Date Ascending": (a, b) => SORTING_DATA.date.sortFunction(a, b),
-    "Date Descending": (a, b) => SORTING_DATA.date.sortFunction(b, a),
-    "Design Ascending": (a, b) => SORTING_DATA.design.sortFunction(a, b),
-    "Design Descending": (a, b) => SORTING_DATA.design.sortFunction(b, a),
-    "Transit Ascending": (a, b) => SORTING_DATA.transit.sortFunction(a, b),
-    "Transit Descending": (a, b) => SORTING_DATA.transit.sortFunction(b, a),
+    "Card Ascending": (a:CardData, b:CardData) => SORTING_DATA.name.sortFunction(a, b),
+    "Card Descending": (a:CardData, b:CardData) => SORTING_DATA.name.sortFunction(b, a),
+    "Date Ascending": (a:CardData, b:CardData) => SORTING_DATA.date.sortFunction(a, b),
+    "Date Descending": (a:CardData, b:CardData) => SORTING_DATA.date.sortFunction(b, a),
+    "Design Ascending": (a:CardData, b:CardData) => SORTING_DATA.design.sortFunction(a, b),
+    "Design Descending": (a:CardData, b:CardData) => SORTING_DATA.design.sortFunction(b, a),
+    "Transit Ascending": (a:CardData, b:CardData) => SORTING_DATA.transit.sortFunction(a, b),
+    "Transit Descending": (a:CardData, b:CardData) => SORTING_DATA.transit.sortFunction(b, a),
   }
 
+  type SortMethodType = keyof typeof sortFunctions;
+
   const [currentType, currentDirection] = sortMethod.split(" ");
-  function sortVisuals(type) {
+  function sortVisuals(type: string) {
     let arrows = null;
     if (type !== currentType) {
       arrows = <><span>▲</span><span>▼</span></>
@@ -66,7 +69,7 @@ export default function Stats() {
     </tr>
   )
 
-  const rowElements = cards.current.map((card) => (
+  const rowElements = cards.current.map((card: CardData) => (
     <tr key={`stats-row-${card.id}`}>
       <td className="stats-table-first-column">
         <Link to={`/${card.id}`}>

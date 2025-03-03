@@ -1,9 +1,9 @@
-import Select from 'react-select'
+import Select, { StylesConfig } from 'react-select'
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useNavigationData } from './NavigationContext'
 
-import { SORTING_DATA } from '../utils/constants'
+import { SORTING_DATA, SORTING_OPTION } from '../utils/constants'
 
 import { LuArrowUpDown } from "react-icons/lu";
 
@@ -13,10 +13,16 @@ export default function SortSelect() {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
-    const sortingOptions = Object.entries(SORTING_DATA).map(([key, value]) => ({
+    type OptionType = {
+        value: string;
+        label: string;
+    };
+
+    const sortingOptions: OptionType[] = Object.entries(SORTING_DATA).map(([key, value]) => ({
         value: key,
         label: value.label,
     }))
+
     const currentSortingOption = sortingOptions.find(option => option.value === sortingOption)
 
     useEffect(() => {
@@ -42,7 +48,8 @@ export default function SortSelect() {
         setIsHovered(false);
     }
 
-    const style = {
+    type IsMulti = false;
+    const style: StylesConfig<OptionType, IsMulti> = {
         control: (base, state) => ({
           ...base,
           backgroundColor: "var(--color-background)",
@@ -96,11 +103,11 @@ export default function SortSelect() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <Select
+                    <Select<OptionType, IsMulti>
                         value={currentSortingOption}
                         options={sortingOptions}
                         isClearable={false}
-                        onChange={(e) => setSortingOption(e.value)}
+                        onChange={(e) => setSortingOption(e?.value as SORTING_OPTION)}
                         onBlur={() => {
                             setIsHovered(false);
                         }}

@@ -1,8 +1,14 @@
-export const Logo = (props) => {
-  const fill = props?.fill || "white"
+import React from 'react'
+
+interface LogoProps extends React.SVGProps<SVGSVGElement> {
+    fill: string;
+}
+
+export function Logo<T extends object>(props:LogoProps) {
+    const fill = props?.fill || "white"
   return (
     <svg width="2130" height="339" viewBox="0 0 2130 339" xmlns="http://www.w3.org/2000/svg" {...props} fill="none">
-<g clip-path="url(#clip0_9_206)">
+<g clipPath="url(#clip0_9_206)">
 <path fillRule="evenodd" clipRule="evenodd" d="M100.107 0.839355H21C9.40202 0.839355 0 10.2414 0 21.8394V241.839C0 253.437 9.40202 262.839 21 262.839H100.107V0.839355ZM129.107 262.839H162C173.598 262.839 183 253.437 183 241.839V21.8394C183 10.2414 173.598 0.839355 162 0.839355H129.107V262.839ZM22.1072 110C22.1072 106.134 25.2412 103 29.1072 103H44.1072C47.9732 103 51.1072 106.134 51.1072 110V170C51.1072 173.866 47.9732 177 44.1072 177H29.1072C25.2412 177 22.1072 173.866 22.1072 170V110ZM29.1072 190C25.2412 190 22.1072 193.134 22.1072 197V226C22.1072 229.866 25.2412 233 29.1072 233H44.1072C47.9732 233 51.1072 229.866 51.1072 226V197C51.1072 193.134 47.9732 190 44.1072 190H29.1072Z" fill={fill}/>
 <mask id="mask0_9_206" style={{maskType: "alpha"}} maskUnits="userSpaceOnUse" x="107" y="-46" width="2124" height="460">
 <path d="M189.607 185.5C162.107 122 107.107 -8.5 107.107 -22.5L1114.11 -46L2198.11 4L2230.11 291.5L2079.61 413.5L360.107 312L189.607 185.5Z" fill="#D9D9D9"/>

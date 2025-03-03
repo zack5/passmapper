@@ -7,18 +7,23 @@ import CardExpanded from '../components/CardExpanded';
 import Stars from '../components/Stars';
 import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
 import { getCardLocationString } from '../utils/utils';
+import { CardData } from '../utils/types';
 
 import { FiMapPin } from "react-icons/fi";
 import { FiCalendar } from "react-icons/fi";
 
-function getRating(emojiString) {
+function getRating(emojiString: string) {
   return emojiString.split('⭐️').length - 1
 }
 
 export default function CardDetail() {
   const { id } = useParams();
   const cards = useCardsData();
-  const card = cards.find(card => card.id === id);
+  const card = cards.find((card: CardData) => card.id === id)
+
+  if (!card) {
+    return <div>Error: unable to find card with id {id}</div>;
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,7 +47,7 @@ export default function CardDetail() {
     }
   }
 
-  const backButtonX = card.Horizontal ? 0 : CARD_EXPANDED_HEIGHT - CARD_EXPANDED_WIDTH
+  const backButtonX = card['Horizontal'] ? 0 : CARD_EXPANDED_HEIGHT - CARD_EXPANDED_WIDTH
 
   return (
     <div className="card-detail-page">

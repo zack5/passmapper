@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 
 import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
+import { CardData } from "../utils/types";
 
-export default function CardExpanded({ card }) {
+export default function CardExpanded({ card }: { card: CardData }) {
 
     const zIndex = 999
 
@@ -16,6 +17,9 @@ export default function CardExpanded({ card }) {
         zIndex: zIndex,
         width: w + "px",
         height: h + "px",
+        rotate: 0,
+        x: 0,
+        y: 0,
     }
 
     if (card.Horizontal) {
@@ -36,7 +40,7 @@ export default function CardExpanded({ card }) {
             <motion.img layoutId={`card-${card.id}`} key={key}
                 className="card-expanded card-shadow"
                 src={`/cards/${card.id}.` + (card.id === "metrocard" ? "png" : "jpg")}
-                alt={card.name}
+                alt={card.Card}
                 style={style}
             />
         </div>
