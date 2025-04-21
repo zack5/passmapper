@@ -55,6 +55,12 @@ p {
     margin-block: .3125rem;
 }
 
+@media (max-width: 768px) {
+    p {
+        font-size: 0.85rem;
+    }
+}
+
 button {
     background-color: var(--color-background);
     border: 1px solid var(--color-button-border);
@@ -451,6 +457,14 @@ th > button  {
     padding: 0;
     padding-block: 0.5rem;
     padding-inline: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    th > button, td {
+        font-size: 0.85rem;
+        padding-block: 0.25rem;
+        padding-inline: 0.25rem;
+    }
 }
 
 td > a {
