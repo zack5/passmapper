@@ -342,6 +342,44 @@
     "id": "ov"
   },
   {
+    "Card": "Ride Ready",
+    "Region": "Burlington",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-07-02",
+    "Acquisition Story": "Protip from the agent who sold me the card: take note of the ID number of the bus you board in case you lose something and need to track it down!",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "I wish this card that says \"Green Mountain Transit\" had an image of the Green Mountains, but I will settle for this map of the city!",
+    "Transit System": "⭐️",
+    "Transit System Notes": "I love Burlington, but I'm afraid busses that peak at 30-minute headways can't earn beyond a single star on this scale.",
+    "Coordinates": [
+      -73.2121,
+      44.4759
+    ],
+    "Horizontal": "TRUE",
+    "Color": 55,
+    "id": "gmt"
+  },
+  {
+    "Card": "SEPTA Key",
+    "Region": "Philidelphia",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-04-19",
+    "Acquisition Story": "The card was warm when it popped out of the vending machine!",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "The Southeastern Pennsylvania Transportation Authority (SEPTA) comes out swinging with a bright, bold turquoise, which I like. The background chevron motif echoes SEPTA's own logo, but the way it is presented here adds a lot of visual noise that fights with the text for attention.",
+    "Transit System": "⭐️⭐️⭐️",
+    "Transit System Notes": "On my first subway trip in Philidelphia, my car contained one person smoking, one person rolling a joint, and another very messily eating a burrito. Seems like the network has good coverage though?",
+    "Coordinates": [
+      -75.1652,
+      39.9526
+    ],
+    "Horizontal": "",
+    "Color": 95,
+    "id": "septakey"
+  },
+  {
     "Card": "SmartLink",
     "Region": "New York City metropolitan area",
     "Country": "USA",
@@ -380,14 +418,14 @@
     "id": "smartrider"
   },
   {
-    "Card": "SmartTrip",
+    "Card": "SmarTrip",
     "Region": "Washington, D.C.",
     "Country": "USA",
     "Continent": "North America",
     "Date Obtained": "2025-04-11",
     "Acquisition Story": "I don't usually like Brutalist architecture, but I love these stations!",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "The play with perspective feels a little haphazard to me, and I am not particularly fond of the color palette or name.",
+    "Card Design": "⭐️⭐️",
+    "Design Notes": "The play with perspective feels a little haphazard to me, and I am not particularly fond of the color palette or name. I also feel like it's missing a 'T' in 'SmarTrip'.",
     "Transit System": "⭐️⭐️⭐️⭐️",
     "Transit System Notes": "Getting around feels easy. Due to the density, walking is often an attractive option. Stations are clean and feel safe.",
     "Coordinates": [
@@ -435,24 +473,5 @@
     "Horizontal": "TRUE",
     "Color": 20,
     "id": "tropicard"
-  },
-  {
-    "Card": "SEPTA Key",
-    "Region": "Philidelphia",
-    "Country": "USA",
-    "Continent": "North America",
-    "Date Obtained": "2025-04-19",
-    "Acquisition Story": "The card was warm when it popped out of the vending machine!",
-    "Card Design": "⭐️⭐️⭐️",
-    "Design Notes": "The Southeastern Pennsylvania Transportation Authority (SEPTA) comes out swinging with a bright, bold turquoise, which I like. The background chevron motif echoes SEPTA's own logo, but the way it is presented here adds a lot of visual noise that fights with the text for attention.",
-    "Transit System": "⭐️⭐️⭐️",
-    "Transit System Notes": "On my first subway trip in Philidelphia, my car contained one person smoking, one person rolling a joint, and another very messily eating a burrito. Seems like the network has good coverage though?",
-    "Coordinates": [
-      -75.1652,
-      39.9526
-    ],
-    "Horizontal": "",
-    "Color": 95,
-    "id": "septakey"
   }
 ]
