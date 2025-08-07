@@ -39,7 +39,7 @@ export const CONTINENT_TRANSFORMS = {
     },
     "North America": {
         translateX: 780,
-        translateY: 350,
+        translateY: 390,
         scale: 3,
     },
     "Europe": {

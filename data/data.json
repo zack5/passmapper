@@ -342,6 +342,25 @@
     "id": "ov"
   },
   {
+    "Card": "People Mover",
+    "Region": "Anchorage",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-07-08",
+    "Acquisition Story": "My photo! It's so big on the card!! No longer shall I live in fear of transit fraud",
+    "Card Design": "⭐️⭐️",
+    "Design Notes": "While I do enjoy looking at my own face, the design feels a bit rough and ready. It also appears that the artwork didn't account for a bleed zone when printing.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "I'm awarding two stars for peak frequencies of 15m on multiple routes and unexpectedly good bike network.",
+    "Coordinates": [
+      -150.4931,
+      61.2888
+    ],
+    "Horizontal": "",
+    "Color": 65,
+    "id": "peoplemover"
+  },
+  {
     "Card": "Ride Ready",
     "Region": "Burlington",
     "Country": "USA",
@@ -473,5 +492,24 @@
     "Horizontal": "TRUE",
     "Color": 20,
     "id": "tropicard"
+  },
+  {
+    "Card": "Ventra",
+    "Region": "Chicago",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-07-25",
+    "Acquisition Story": "I'm convinced the signage in O'Hare is designed to make it as hard as possible to find the train stop.",
+    "Card Design": "⭐️⭐️⭐️⭐️⭐️",
+    "Design Notes": "Clean, simple, and effective. Some triangles have different levels of gloss finish which makes it shimmer in a fun way in person. Ventra evokes wind for the windy city, which sends it over the top for me.",
+    "Transit System": "⭐️⭐️⭐️⭐️",
+    "Transit System Notes": "Huge points for easy connections to both Chicago airports! I have a personal grievance with the bus driver who zoomed past my stop despite my clear signaling though.",
+    "Coordinates": [
+      -87.6298,
+      41.8781
+    ],
+    "Horizontal": "",
+    "Color": 105,
+    "id": "ventra"
   }
 ]
