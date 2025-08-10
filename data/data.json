@@ -15,7 +15,7 @@
       -45.0312
     ],
     "Horizontal": "TRUE",
-    "Color": 50,
+    "Color": 30,
     "id": "bee"
   },
   {
@@ -95,6 +95,25 @@
     "id": "divia"
   },
   {
+    "Card": "FARE-PAY",
+    "Region": "New Jersey",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-08-09",
+    "Acquisition Story": "Shamefully, I did not realize that New Jersey Transit had rolled out their new transit card until four months after its launch!",
+    "Card Design": "⭐️⭐️⭐️⭐️",
+    "Design Notes": "I adore the orange-purple sunset gradient. This card would be an easy five stars if not for the bar code in the corner.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "It's wonderful that Newark has light rail, but the ear-piercing beeping it makes to warn you the doors are closing makes me seriously consider walking instead.",
+    "Coordinates": [
+      -74.1745,
+      40.7315
+    ],
+    "Horizontal": "TRUE",
+    "Color": 15,
+    "id": "farepay"
+  },
+  {
     "Card": "Go Card",
     "Region": "South East Queensland",
     "Country": "Australia",
@@ -148,7 +167,7 @@
       40.7128
     ],
     "Horizontal": "TRUE",
-    "Color": 30,
+    "Color": 50,
     "id": "metrocard"
   },
   {
@@ -353,8 +372,8 @@
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "I'm awarding two stars for peak frequencies of 15m on multiple routes and unexpectedly good bike network.",
     "Coordinates": [
-      -150.4931,
-      61.2888
+      154.4931,
+      65.5888
     ],
     "Horizontal": "",
     "Color": 65,
@@ -484,7 +503,7 @@
     "Card Design": "⭐️⭐️⭐️⭐️",
     "Design Notes": "Not as simple as your classic transit cards, but I find it pleasing. Uses a lot of colors that are rare in the space.",
     "Transit System": "⭐️",
-    "Transit System Notes": "Sparse bus network across vast see of single family dwellings. I do appreciate that there is a line from the airport and a line to the beach.",
+    "Transit System Notes": "Sparse bus network across vast sea of single family dwellings. I do appreciate that there is a line from the airport and a line to the beach.",
     "Coordinates": [
       -81.8723,
       26.6406
@@ -499,11 +518,11 @@
     "Country": "USA",
     "Continent": "North America",
     "Date Obtained": "2025-07-25",
-    "Acquisition Story": "I'm convinced the signage in O'Hare is designed to make it as hard as possible to find the train stop.",
+    "Acquisition Story": "I'm convinced the signage in O'Hare is designed to make it as hard as possible to find the train station.",
     "Card Design": "⭐️⭐️⭐️⭐️⭐️",
-    "Design Notes": "Clean, simple, and effective. Some triangles have different levels of gloss finish which makes it shimmer in a fun way in person. Ventra evokes wind for the windy city, which sends it over the top for me.",
+    "Design Notes": "Clean, simple, and effective. Some triangles have different levels of gloss finish which makes it shimmer in a fun way. Ventra evokes wind for the windy city, which sends it over the top for me.",
     "Transit System": "⭐️⭐️⭐️⭐️",
-    "Transit System Notes": "Huge points for easy connections to both Chicago airports! I have a personal grievance with the bus driver who zoomed past my stop despite my clear signaling though.",
+    "Transit System Notes": "Huge points for easy connections to both Chicago airports! I have a personal grievance with the bus driver who zoomed past my stop despite my clear signaling, though.",
     "Coordinates": [
       -87.6298,
       41.8781
