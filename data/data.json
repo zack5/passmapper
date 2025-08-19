@@ -190,6 +190,25 @@
     "id": "mobib"
   },
   {
+    "Card": "MST Go Card",
+    "Region": "Monterey County",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-08-19",
+    "Acquisition Story": "I ordered this card by mail. I was pleasantly surprised that the envelope was addressed by hand!",
+    "Card Design": "⭐️⭐️",
+    "Design Notes": "I tend to prefer vector graphics on cards, though the photo of Fisherman's Wharf is not what irks me here. I'm particularly vexxed by the amount of space given to a solid gray band. The pseudo-3D logo also feels a touch dated.",
+    "Transit System": "⭐️",
+    "Transit System Notes": "This card can be used on a network of bus routes around Monterey and Salinas, a handful of which peak at 15-minute headways.",
+    "Coordinates": [
+      -121.8978,
+      36.5973
+    ],
+    "Horizontal": "TRUE",
+    "Color": 185,
+    "id": "mstgo"
+  },
+  {
     "Card": "Myki",
     "Region": "Victoria",
     "Country": "Australia",
@@ -372,8 +391,8 @@
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "I'm awarding two stars for peak frequencies of 15m on multiple routes and unexpectedly good bike network.",
     "Coordinates": [
-      154.4931,
-      65.5888
+      -150.4931,
+      61.2888
     ],
     "Horizontal": "",
     "Color": 65,
