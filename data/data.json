@@ -76,6 +76,25 @@
     "id": "clipper"
   },
   {
+    "Card": "Cruz Cash",
+    "Region": "Santa Cruz",
+    "Country": "USA",
+    "Continent": "North America",
+    "Date Obtained": "2025-08-22",
+    "Acquisition Story": "After I saw this card's design and realized it wasn't a joke, I knew I had to order one immediately.",
+    "Card Design": "⭐️⭐️",
+    "Design Notes": "I have to admit I am charmed by the early 2000s throw-all-the-clipart-together aesthetic, even though I know there's no way the artist put it together with that vision in mind.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "The Santa Cruz METRO website gives me the impression that there are some very passionate people working there, doing a lot with a little. I like how the network is focused on solid downtown access over a sprawling infrequent service. Their free K-12 pilot program seems great as well.",
+    "Coordinates": [
+      -122.0288,
+      36.9741
+    ],
+    "Horizontal": "TRUE",
+    "Color": 75,
+    "id": "cruzcash"
+  },
+  {
     "Card": "Divia",
     "Region": "Dijon",
     "Country": "France",
