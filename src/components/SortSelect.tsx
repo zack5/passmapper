@@ -10,9 +10,6 @@ import { LuArrowUpDown } from "react-icons/lu";
 export default function SortSelect() {
     const { sortingOption, setSortingOption } = useNavigationData();
 
-    const [isOpen, setIsOpen] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
-
     type OptionType = {
         value: string;
         label: string;
@@ -25,37 +22,13 @@ export default function SortSelect() {
 
     const currentSortingOption = sortingOptions.find(option => option.value === sortingOption)
 
-    useEffect(() => {
-        if (isHovered) {
-            setIsOpen(true);
-        } else {
-            const timeout = setTimeout(() => {
-                if (!isHovered) {
-                    setIsOpen(false);
-                }
-            }, 1000);
-            return () => {
-                clearTimeout(timeout);
-            }
-        }
-    }, [isHovered]);
-
-    function onMouseEnter() {
-        setIsHovered(true);
-    }
-
-    function onMouseLeave() {
-        setIsHovered(false);
-    }
-
     type IsMulti = false;
     const style: StylesConfig<OptionType, IsMulti> = {
         control: (base, state) => ({
           ...base,
           backgroundColor: "var(--color-background)",
-          borderColor: state.isFocused ? "var(--color-accent)" : "#ccc",
+          border: "none",
           boxShadow: state.isFocused ? "0 0 5px var(--color-accent)" : "none",
-          "&:hover": { borderColor: "var(--color-accent)" },
         }),
         menu: (base) => ({
           ...base,
@@ -80,41 +53,15 @@ export default function SortSelect() {
       };
 
     return (
-        <motion.div className="sort-select-container" 
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        >
-            { /* Sort button */}
-            <motion.button 
-                onBlur={() => {
-                    setIsHovered(false);
-                }}
-                initial={{ opacity: 0.3 }}
-                animate={{ opacity: (isHovered || isOpen) ? 1 : 0.3 }}
-            >
-                <LuArrowUpDown size={20} color="var(--color-text)" />
-            </motion.button>
-
-            { /* Dropdown menu */}
-            <AnimatePresence>
-                {isOpen && <motion.div
-                    initial={{ opacity: 0}}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    <Select<OptionType, IsMulti>
-                        value={currentSortingOption}
-                        options={sortingOptions}
-                        isClearable={false}
-                        onChange={(e) => setSortingOption(e?.value as SORTING_OPTION)}
-                        onBlur={() => {
-                            setIsHovered(false);
-                        }}
-                        styles={style}
-                    />
-                </motion.div>}
-            </AnimatePresence>
-        </motion.div>
+        <div className="sort-select-container">
+            <Select<OptionType, IsMulti>
+                value={currentSortingOption}
+                options={sortingOptions}
+                isClearable={false}
+                className="map-control"
+                onChange={(e) => setSortingOption(e?.value as SORTING_OPTION)}
+                styles={style}
+            />
+        </div>
     )
 }

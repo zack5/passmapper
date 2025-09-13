@@ -143,7 +143,7 @@ export default function Map() {
           )}
 
           {/* Zoom controls */}
-          <div className="zoom-controls">
+          <div className="zoom-controls map-control">
             <button onClick={handleZoomIn} aria-label="Zoom in" className="zoom-button">
               +
             </button>
