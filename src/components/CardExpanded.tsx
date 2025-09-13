@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 
 import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
 import { CardData } from "../utils/types";
+import { useNavigationData } from "./NavigationContext";
 
 export default function CardExpanded({ card }: { card: CardData }) {
+    const { isMobile } = useNavigationData();
 
     const zIndex = 999
 
@@ -32,7 +34,7 @@ export default function CardExpanded({ card }: { card: CardData }) {
     }
 
     const containerStyle = {
-        width: Math.max(w, h) + "px",
+        width: (card.Horizontal ? h : w) + "px",
         height: (card.Horizontal ? w : h) + "px",
     }
 

@@ -13,7 +13,7 @@ export default function Card({ card, index, selectedCardIndex }: {
 }) {
     const { id } = useParams();
 
-    const { selectedCardId, setSelectedCardId } = useNavigationData()
+    const { selectedCardId, setSelectedCardId, isDraggingCardHolder } = useNavigationData()
     const isSelected = card.id == selectedCardId
 
     const isInDetailView = id === card.id
@@ -29,13 +29,23 @@ export default function Card({ card, index, selectedCardIndex }: {
 
     function onMouseLeave() {
     }
+    
+    const handleClick = (e: React.MouseEvent) => {
+        if (isDraggingCardHolder) {
+            e.preventDefault();
+        }
+    };
+
 
     const zIndex = (index != undefined && selectedCardIndex != undefined)
         ? -1 * Math.abs(index - selectedCardIndex) + 999
         : 999
 
     return (
-        <Link to={`${card.id}`}>
+        <Link to={`${card.id}`}
+            onDragStart={(e) => e.preventDefault()}
+            onClick={handleClick}
+        >
             <motion.img
                 layoutId={`card-${card.id}`}
                 className="card card-shadow"

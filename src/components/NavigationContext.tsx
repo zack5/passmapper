@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 import { SORTING_OPTION } from '../utils/constants';
 
@@ -9,9 +9,12 @@ interface NavigationContextType {
   setSortingOption: (option: SORTING_OPTION) => void;
   cardHolderHovered: boolean;
   setCardHolderHovered: (hovered: boolean) => void;
+  isDraggingCardHolder: boolean;
+  setIsDraggingCardHolder: (dragging: boolean) => void;
+  isMobile: boolean;
+  setIsMobile: (mobile: boolean) => void;
 }
 
-// Create context with proper type and provide a default value
 const NavigationContext = createContext<NavigationContextType | null>(null);
 
 interface NavigationProviderProps {
@@ -20,8 +23,23 @@ interface NavigationProviderProps {
 
 export function NavigationProvider({ children }: NavigationProviderProps) {
   const [selectedCardId, setSelectedCardId] = useState<string>('');
-  const [sortingOption, setSortingOption] = useState<SORTING_OPTION>('location');
+  const [sortingOption, setSortingOption] = useState<SORTING_OPTION>('color');
   const [cardHolderHovered, setCardHolderHovered] = useState<boolean>(false);
+  const [isDraggingCardHolder, setIsDraggingCardHolder] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <NavigationContext.Provider value={{
@@ -30,7 +48,11 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
       sortingOption,
       setSortingOption,
       cardHolderHovered,
-      setCardHolderHovered
+      setCardHolderHovered,
+      isDraggingCardHolder,
+      setIsDraggingCardHolder,
+      isMobile,
+      setIsMobile
     }}>
       {children}
     </NavigationContext.Provider>

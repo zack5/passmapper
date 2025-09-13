@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Outlet } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 import { useCardsData } from '../components/CardsContext'
 import Card from '../components/Card'
@@ -8,11 +9,31 @@ import SortSelect from '../components/SortSelect'
 
 import { SORTING_DATA } from '../utils/constants'
 
-export default function CardHolder() {
-  const { sortingOption, selectedCardId, setCardHolderHovered } = useNavigationData();
+const MAIN_PADDING = 10
+const MIN_HOLDER_WIDTH = 1000
 
-  const cards = useRef(useCardsData())
-  const previousSortingOption = useRef('')
+export default function CardHolder() {
+const [screen, setScreen] = useState({ width: window.innerWidth });
+
+const { sortingOption, selectedCardId, setCardHolderHovered, setIsDraggingCardHolder } = useNavigationData();
+const cards = useRef(useCardsData());
+const previousSortingOption = useRef('');
+
+useEffect(() => {
+  const handleResize = () => setScreen({ width: window.innerWidth });
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
+// Derived values based on screen width
+const visibleWidth = screen.width - 2 * MAIN_PADDING;
+const constraint = Math.max(0, (MIN_HOLDER_WIDTH - visibleWidth) / 2);
+const constraints = { left: -constraint, right: constraint };
+const startPos = constraint;
+const hasStartPos = screen.width > 0;
+const canDrag = constraint > 0;
+
 
   if (sortingOption !== previousSortingOption.current) {
     cards.current = [...cards.current].sort(SORTING_DATA[sortingOption].sortFunction)
@@ -38,27 +59,34 @@ export default function CardHolder() {
   const numCards = cards.current.length
   const gridColumnStyle = {
     gridTemplateColumns: `repeat(${cards.current.length - 1}, minmax(0, max-content)) max-content`,
-    maxWidth: `calc(var(--card-width) * ${numCards * 0.9})` // ensure the cards overlap at least a little bit
+    maxWidth: `calc(var(--card-width) * ${numCards * 0.9})`, // ensure the cards overlap at least a little bit
+    minWidth: `1000px`
   }
 
   return (
     <>
+      <div className="card-container-child">
+        <Outlet />
+      </div>
       <div className="card-container-flexbox">
-        <div className="card-container-header">
-          <div
+        <motion.div className="card-container-header">
+          {hasStartPos && <motion.div
+            key={screen.width} // reset position when screen size changes
+            drag={canDrag ? "x" : false}
+            dragConstraints={constraints}
+            onDragStart={() => setIsDraggingCardHolder(true)}
+            onDragEnd={() => setIsDraggingCardHolder(false)}
+            initial={{ x: startPos }}
             className="card-container"
             style={gridColumnStyle}
             onMouseEnter={() => setCardHolderHovered(true)}
             onMouseLeave={() => setCardHolderHovered(false)}
           >
             {cardElements}
-          </div>
-          <SortSelect />
-        </div>
+          </motion.div>}
+        </motion.div>
       </div>
-      <div className="card-container-child">
-        <Outlet />
-      </div>
+      <SortSelect marginLeft={constraint} />
     </>
   );
 }

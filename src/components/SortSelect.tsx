@@ -1,13 +1,9 @@
 import Select, { StylesConfig } from 'react-select'
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { useNavigationData } from './NavigationContext'
 
 import { SORTING_DATA, SORTING_OPTION } from '../utils/constants'
 
-import { LuArrowUpDown } from "react-icons/lu";
-
-export default function SortSelect() {
+export default function SortSelect({ marginLeft = 0 } = { marginLeft: 0 }) {
     const { sortingOption, setSortingOption } = useNavigationData();
 
     type OptionType = {
