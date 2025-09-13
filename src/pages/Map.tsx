@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { animate, AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 import { Tooltip } from 'react-tooltip';
@@ -7,6 +7,9 @@ import { Tooltip } from 'react-tooltip';
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
 import { getCardLocationString } from '../utils/utils';
+
+const ZOOM_MAX = 8;
+const ZOOM_MIN = 1;
 
 function useContainerSize(ref: React.RefObject<HTMLElement | null>) {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -29,10 +32,31 @@ export default function Map() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { width, height } = useContainerSize(containerRef);
 
+  const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
+    coordinates: [0, 20],
+    zoom: 1,
+  });
+  
   const cards = useCardsData();
   const { selectedCardId, setSelectedCardId, cardHolderHovered } = useNavigationData();
 
   const hasActivePin = cardHolderHovered || mapPinHovered;
+
+  const handleZoomTo = (targetZoom: number) => {
+    animate(position.zoom, targetZoom, {
+      duration: 0.1,
+      ease: "easeInOut",
+      onUpdate: (latest) => {
+        setPosition((p) => ({ ...p, zoom: latest }));
+      }
+    });
+  };
+
+  const handleZoomIn = () =>
+    handleZoomTo(Math.min(position.zoom * 1.5, ZOOM_MAX));
+
+  const handleZoomOut = () =>
+    handleZoomTo(Math.max(position.zoom / 1.5, ZOOM_MIN));
 
   return (
     <>
@@ -46,6 +70,7 @@ export default function Map() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
+          {/* Map */}
           {width > 0 && height > 0 && (
             <ComposableMap
               width={width}
@@ -55,7 +80,13 @@ export default function Map() {
                 center: [0, 20],
               }}
             >
-              <ZoomableGroup>
+              <ZoomableGroup
+                center={position.coordinates}
+                zoom={position.zoom}
+                minZoom={ZOOM_MIN}
+                maxZoom={ZOOM_MAX}
+                onMoveEnd={setPosition}
+              >
                 <Geographies geography={"/map.json"}>
                   {({ geographies }) =>
                     geographies.map((geo) => {
@@ -110,6 +141,18 @@ export default function Map() {
               </ZoomableGroup>
             </ComposableMap>
           )}
+
+          {/* Zoom controls */}
+          <div className="zoom-controls">
+            <button onClick={handleZoomIn} aria-label="Zoom in" className="zoom-button">
+              +
+            </button>
+            <button onClick={handleZoomOut} aria-label="Zoom out" className="zoom-button">
+              −
+            </button>
+          </div>
+
+          { /* Tooltip */}
           <Tooltip id={`marker`} isOpen={hasActivePin} />
         </motion.div>
       </AnimatePresence>
