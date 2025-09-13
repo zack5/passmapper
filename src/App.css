@@ -367,19 +367,24 @@ main {
 /* --- MAP ---*/
 
 .map-container {
-    width: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* --- CARD SORTING ---*/
 
 .sort-select-container {
-    z-index: 1000;
     max-width: 400px;
     display: flex;
     gap: 0.2rem;
 }
 
 .sort-select-container > button {
+    z-index: 1000;
     height: 2.35rem;
     width: 2.35rem;
     display: flex;
@@ -395,6 +400,7 @@ main {
 }
 
 .sort-select-container > div {
+    z-index: 1000;
     min-width: 180px;
 }
 
