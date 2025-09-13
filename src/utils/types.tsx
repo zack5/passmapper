@@ -3,7 +3,6 @@ export interface CardData {
     Card: string;
     Region: string;
     Country: string;
-    Continent: string;
     "Date Obtained": string;
     "Acquisition Story": string;
     "Card Design": string;

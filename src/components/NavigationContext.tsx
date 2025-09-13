@@ -1,14 +1,12 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-import { SORTING_OPTION, CONTINENT } from '../utils/constants';
+import { SORTING_OPTION } from '../utils/constants';
 
 interface NavigationContextType {
   selectedCardId: string;
   setSelectedCardId: (id: string) => void;
   sortingOption: SORTING_OPTION;
   setSortingOption: (option: SORTING_OPTION) => void;
-  continentSelected: CONTINENT;
-  setContinentSelected: (continent: CONTINENT) => void;
   cardHolderHovered: boolean;
   setCardHolderHovered: (hovered: boolean) => void;
 }
@@ -23,7 +21,6 @@ interface NavigationProviderProps {
 export function NavigationProvider({ children }: NavigationProviderProps) {
   const [selectedCardId, setSelectedCardId] = useState<string>('');
   const [sortingOption, setSortingOption] = useState<SORTING_OPTION>('location');
-  const [continentSelected, setContinentSelected] = useState<CONTINENT>('');
   const [cardHolderHovered, setCardHolderHovered] = useState<boolean>(false);
 
   return (
@@ -32,8 +29,6 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
       setSelectedCardId,
       sortingOption,
       setSortingOption,
-      continentSelected,
-      setContinentSelected,
       cardHolderHovered,
       setCardHolderHovered
     }}>

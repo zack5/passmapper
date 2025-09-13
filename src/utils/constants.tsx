@@ -30,27 +30,3 @@ export const SORTING_DATA = {
     }
 }
 export type SORTING_OPTION = keyof typeof SORTING_DATA;
-
-export const CONTINENT_TRANSFORMS = {
-    "": {
-        translateX: 0,
-        translateY: 0,
-        scale: 1,
-    },
-    "North America": {
-        translateX: 780,
-        translateY: 390,
-        scale: 3,
-    },
-    "Europe": {
-        translateX: 160,
-        translateY: 900,
-        scale: 6,
-    },
-    "Oceania": {
-        translateX: -940,
-        translateY: -350,
-        scale: 3,
-    },
-}
-export type CONTINENT = keyof typeof CONTINENT_TRANSFORMS;
