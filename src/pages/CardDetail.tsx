@@ -61,7 +61,10 @@ export default function CardDetail() {
       
       <div className="card-detail-content">
         <div className="card-detail-container">
-          {isMobile && <h1 style={{ marginInline: 'auto', marginTop: '0.15rem', marginBottom: '-2rem' }}>{card.Card}</h1>}
+          {isMobile && <>
+            <Link to="/" className='card-detail-back'>‹ Map</Link>
+            <h1 style={{ marginInline: 'auto', marginTop: '0.15rem', marginBottom: '-2rem' }}>{card.Card}</h1>
+          </>}
           {/* Card Image */}
           <AnimatePresence mode="wait">
             <div className="card-detail">
@@ -82,8 +85,10 @@ export default function CardDetail() {
 
               {/* Acquisition */}
               <motion.div variants={staggeredChildVariant} className="card-detail-info-section">
-                {!isMobile && <h1>{card.Card}</h1>}
-                <Link to="/" className='card-detail-back'>‹ Map</Link>
+                {!isMobile && <> 
+                  <h1>{card.Card}</h1>
+                  <Link to="/" className='card-detail-back'>‹ Map</Link>
+                </>}
                 <div className="card-detail-info-row">
                   <FiMapPin size={20} />
                   <h2>{getCardLocationString(card)}</h2>

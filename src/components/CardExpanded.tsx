@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 
 import { CARD_EXPANDED_WIDTH, CARD_EXPANDED_HEIGHT } from "../utils/constants";
 import { CardData } from "../utils/types";
-import { useNavigationData } from "./NavigationContext";
 
 export default function CardExpanded({ card }: { card: CardData }) {
     const zIndex = 999
