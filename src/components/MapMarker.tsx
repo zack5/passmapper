@@ -21,7 +21,7 @@ export default function MapMarker({
     hasActivePin,
     zoom, // Destructure zoom
 }: MapMarkerProps) {
-    const { selectedCardId, setSelectedCardId, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
+    const { selectedCardId, setSelectedCardId, inspectingCardId, setInspectingCardId, isMobile, setTriggerScrollCardIntoView } = useNavigationData();
 
     return (
         <Marker
@@ -31,7 +31,7 @@ export default function MapMarker({
             onMouseEnter={() => setMapPinHovered(true)}
             onMouseLeave={() => setMapPinHovered(false)}
             data-tooltip-id={selectedCardId === card.id ? `marker` : null}
-            data-tooltip-content={isMobile ? undefined : getCardLocationString(card)}
+            data-tooltip-content={isMobile ? undefined : getCardLocationString(card)} // Mobile tooltip sets its own text within tooltip component
         >
             <Link
                 to={`${card.id}`}
@@ -39,6 +39,7 @@ export default function MapMarker({
                     if (isMobile) {
                         setInspectingCardId(card.id);
                         setSelectedCardId(card.id);
+                        setTriggerScrollCardIntoView(true);
                         event.preventDefault();
                     }
                 }}

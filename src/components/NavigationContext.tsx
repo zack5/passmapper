@@ -13,6 +13,8 @@ interface NavigationContextType {
   setIsDraggingCardHolder: (dragging: boolean) => void;
   inspectingCardId: string;
   setInspectingCardId: (inspecting: string) => void;
+  triggerScrollCardIntoView: boolean;
+  setTriggerScrollCardIntoView: (trigger: boolean) => void;
   isMobile: boolean;
   setIsMobile: (mobile: boolean) => void;
 }
@@ -29,6 +31,7 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
   const [cardHolderHovered, setCardHolderHovered] = useState<boolean>(false);
   const [isDraggingCardHolder, setIsDraggingCardHolder] = useState<boolean>(false);
   const [inspectingCardId, setInspectingCardId] = useState<string>('');
+  const [triggerScrollCardIntoView, setTriggerScrollCardIntoView] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -56,6 +59,8 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
       setIsDraggingCardHolder,
       inspectingCardId,
       setInspectingCardId,
+      triggerScrollCardIntoView,
+      setTriggerScrollCardIntoView,
       isMobile,
       setIsMobile
     }}>

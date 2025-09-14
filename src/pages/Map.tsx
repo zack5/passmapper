@@ -40,7 +40,7 @@ export default function Map() {
   });
 
   const cards = useCardsData();
-  const { selectedCardId, cardHolderHovered, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
+  const { selectedCardId, cardHolderHovered, inspectingCardId, setInspectingCardId, isMobile, isDraggingCardHolder } = useNavigationData();
 
   useEffect(() => {
     if (selectedCardId && isMobile) {
@@ -48,7 +48,7 @@ export default function Map() {
     }
   }, []);
 
-  const hasActivePin = isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered;
+  const hasActivePin = !isDraggingCardHolder && (isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered);
 
   const handleZoomTo = (targetZoom: number) => {
     animate(position.zoom, targetZoom, {
@@ -68,8 +68,8 @@ export default function Map() {
 
   const CustomTooltip = () => {
     if (isMobile) {
+      console.log({ inspectingCardId, selectedCardId });
       const card = cards.find((card) => card.id === selectedCardId);
-      console.log(selectedCardId)
       return (
         <Tooltip
           clickable
@@ -77,7 +77,7 @@ export default function Map() {
           isOpen={hasActivePin}
         >
           {card ? (
-            <Link to={`${selectedCardId}`} style={{color: "white"}}>{getCardLocationString(card) + ` ›`}</Link>
+            <Link to={`${selectedCardId}`} style={{ color: "white" }}>{getCardLocationString(card) + ` ›`}</Link>
           ) : null}
         </Tooltip>
       );
@@ -89,10 +89,9 @@ export default function Map() {
   };
 
   return (
-    <>
-      <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait">
+      <>
         <div style={{ height: "50vh" }}>{/* Empty div for layout purposes */}</div>
-
         <motion.div
           ref={containerRef}
           className="map-container"
@@ -169,9 +168,9 @@ export default function Map() {
           </div>
 
           { /* Tooltip */}
-          <CustomTooltip/>
+          <CustomTooltip />
         </motion.div>
-      </AnimatePresence>
-    </>
+      </>
+    </AnimatePresence>
   );
 }

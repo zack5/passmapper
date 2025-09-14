@@ -38,7 +38,6 @@ export default function Card({ card, index, selectedCardIndex }: {
         }
 
         if (isMobile && location.pathname === "/") {
-            console.log(inspectingCardId, selectedCardId, card.id)
             if (inspectingCardId !== card.id) {
                 e.preventDefault();
                 setInspectingCardId(card.id);
