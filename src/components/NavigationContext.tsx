@@ -11,8 +11,8 @@ interface NavigationContextType {
   setCardHolderHovered: (hovered: boolean) => void;
   isDraggingCardHolder: boolean;
   setIsDraggingCardHolder: (dragging: boolean) => void;
-  inInspectState: boolean;
-  setInInspectState: (inspecting: boolean) => void;
+  inspectingCardId: string;
+  setInspectingCardId: (inspecting: string) => void;
   isMobile: boolean;
   setIsMobile: (mobile: boolean) => void;
 }
@@ -28,7 +28,7 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
   const [sortingOption, setSortingOption] = useState<SORTING_OPTION>('color');
   const [cardHolderHovered, setCardHolderHovered] = useState<boolean>(false);
   const [isDraggingCardHolder, setIsDraggingCardHolder] = useState<boolean>(false);
-  const [inInspectState, setInInspectState] = useState<boolean>(false);
+  const [inspectingCardId, setInspectingCardId] = useState<string>('');
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -54,8 +54,8 @@ export function NavigationProvider({ children }: NavigationProviderProps) {
       setCardHolderHovered,
       isDraggingCardHolder,
       setIsDraggingCardHolder,
-      inInspectState,
-      setInInspectState,
+      inspectingCardId,
+      setInspectingCardId,
       isMobile,
       setIsMobile
     }}>

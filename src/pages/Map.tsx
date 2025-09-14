@@ -10,7 +10,7 @@ import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
 import { getCardLocationString } from '../utils/utils';
 
-const ZOOM_MAX = 100;
+const ZOOM_MAX = 50;
 const ZOOM_MIN = 0.75;
 
 function useContainerSize(ref: React.RefObject<HTMLElement | null>) {
@@ -40,9 +40,9 @@ export default function Map() {
   });
 
   const cards = useCardsData();
-  const { selectedCardId, setSelectedCardId, cardHolderHovered, inInspectState, setInInspectState, isMobile } = useNavigationData();
+  const { selectedCardId, setSelectedCardId, cardHolderHovered, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
 
-  const hasActivePin = isMobile ? inInspectState : cardHolderHovered || mapPinHovered;
+  const hasActivePin = isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered;
 
   const handleZoomTo = (targetZoom: number) => {
     animate(position.zoom, targetZoom, {
@@ -70,7 +70,7 @@ export default function Map() {
           isOpen={hasActivePin}
         >
           {card ? (
-            <Link to={`${selectedCardId}`} style={{color: "white"}}>{getCardLocationString(card) + ` >`}</Link>
+            <Link to={`${selectedCardId}`} style={{color: "white"}}>{getCardLocationString(card) + ` ›`}</Link>
           ) : null}
         </Tooltip>
       );
@@ -108,7 +108,7 @@ export default function Map() {
                 zoom={position.zoom}
                 minZoom={ZOOM_MIN}
                 maxZoom={ZOOM_MAX}
-                onMoveStart={() => setInInspectState(false)}
+                onMoveStart={() => setInspectingCardId('')}
                 onMoveEnd={setPosition}
               >
                 <Geographies geography={"/map.json"}>
@@ -117,9 +117,11 @@ export default function Map() {
                       const commonStyle = { fill: "var(--color-map)", transition: "fill 0.5s" };
                       return (
                         <Geography
+                          className='geography'
                           key={geo.rsmKey}
                           geography={geo}
                           onMouseDown={(event) => event.preventDefault()}
+                          onClick={(event) => event.preventDefault()}
                           style={{
                             default: commonStyle,
                             hover: commonStyle,

@@ -19,14 +19,14 @@ function getRating(emojiString: string) {
 }
 
 export default function CardDetail() {
-  const { setInInspectState, isMobile } = useNavigationData();
+  const { setInspectingCardId, isMobile } = useNavigationData();
   const { id } = useParams();
   const cards = useCardsData();
   const card = cards.find((card: CardData) => card.id === id)
 
   useEffect(() => {
-    setInInspectState(false);
-  }, [setInInspectState]);
+    setInspectingCardId(false);
+  }, [setInspectingCardId]);
 
   if (!card) {
     return <div>Error: unable to find card with id {id}</div>;

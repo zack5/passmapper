@@ -21,7 +21,7 @@ export default function MapMarker({
     hasActivePin,
     zoom, // Destructure zoom
 }: MapMarkerProps) {
-    const { selectedCardId, setSelectedCardId, inInspectState, setInInspectState, isMobile } = useNavigationData();
+    const { selectedCardId, setSelectedCardId, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
 
     return (
         <Marker
@@ -37,7 +37,7 @@ export default function MapMarker({
                 to={`${card.id}`}
                 onClick={(event) => {
                     if (isMobile) {
-                        setInInspectState(true);
+                        setInspectingCardId(card.id);
                         setSelectedCardId(card.id);
                         event.preventDefault();
                     }

@@ -14,7 +14,7 @@ export default function Card({ card, index, selectedCardIndex }: {
     const { id } = useParams();
     const location = useLocation();
 
-    const { selectedCardId, setSelectedCardId, isDraggingCardHolder, inInspectState, setInInspectState, isMobile } = useNavigationData()
+    const { selectedCardId, setSelectedCardId, isDraggingCardHolder, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData()
     const isSelected = card.id == selectedCardId
 
     const isInDetailView = id === card.id
@@ -38,9 +38,10 @@ export default function Card({ card, index, selectedCardIndex }: {
         }
 
         if (isMobile && location.pathname === "/") {
-            if (!inInspectState) {
+            console.log(inspectingCardId, selectedCardId, card.id)
+            if (inspectingCardId !== card.id) {
                 e.preventDefault();
-                setInInspectState(true);
+                setInspectingCardId(card.id);
                 return;
             }
         }
