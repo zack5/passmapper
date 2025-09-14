@@ -274,6 +274,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .card-container-header {
@@ -567,6 +568,7 @@ th > button  {
 
 td > a {
     color: var(--color-table-text);
+    text-decoration: underline;
 }
 
 /* --- ABOUT ---*/

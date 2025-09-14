@@ -25,7 +25,7 @@ export default function CardDetail() {
   const card = cards.find((card: CardData) => card.id === id)
 
   useEffect(() => {
-    setInspectingCardId(false);
+    setInspectingCardId("");
   }, [setInspectingCardId]);
 
   if (!card) {

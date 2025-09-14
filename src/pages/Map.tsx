@@ -40,7 +40,13 @@ export default function Map() {
   });
 
   const cards = useCardsData();
-  const { selectedCardId, setSelectedCardId, cardHolderHovered, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
+  const { selectedCardId, cardHolderHovered, inspectingCardId, setInspectingCardId, isMobile } = useNavigationData();
+
+  useEffect(() => {
+    if (selectedCardId && isMobile) {
+      setInspectingCardId(selectedCardId);
+    }
+  }, []);
 
   const hasActivePin = isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered;
 
@@ -63,6 +69,7 @@ export default function Map() {
   const CustomTooltip = () => {
     if (isMobile) {
       const card = cards.find((card) => card.id === selectedCardId);
+      console.log(selectedCardId)
       return (
         <Tooltip
           clickable
@@ -84,6 +91,8 @@ export default function Map() {
   return (
     <>
       <AnimatePresence mode="wait">
+        <div style={{ height: "50vh" }}>{/* Empty div for layout purposes */}</div>
+
         <motion.div
           ref={containerRef}
           className="map-container"
