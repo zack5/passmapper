@@ -5,8 +5,6 @@ import { CardData } from "../utils/types";
 import { useNavigationData } from "./NavigationContext";
 
 export default function CardExpanded({ card }: { card: CardData }) {
-    const { isMobile } = useNavigationData();
-
     const zIndex = 999
 
     const key = `detail-card-${card.id}`

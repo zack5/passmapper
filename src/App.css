@@ -262,6 +262,7 @@ main {
 @media (max-width: 768px) {
     .card-expanded-container {
         margin-inline: auto;
+        margin-block: 1rem;
     }
 }
 
@@ -324,6 +325,18 @@ main {
     flex-direction: column;
 }
 
+.card-detail-back {
+    margin-top: -1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .card-detail-back {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
 .card-detail-content {
     display: flex;
     flex-direction: column;
@@ -337,6 +350,10 @@ main {
     flex-direction: row;
 
     gap: 55px;
+}
+
+.card-detail {
+    position: relative;
 }
 
 @media (max-width: 768px) {
