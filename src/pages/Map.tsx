@@ -9,7 +9,7 @@ import { useNavigationData } from '../components/NavigationContext';
 import { getCardLocationString } from '../utils/utils';
 
 const ZOOM_MAX = 8;
-const ZOOM_MIN = 1;
+const ZOOM_MIN = 0.75;
 
 function useContainerSize(ref: React.RefObject<HTMLElement | null>) {
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -36,11 +36,11 @@ export default function Map() {
     coordinates: [0, 20],
     zoom: 1,
   });
-  
-  const cards = useCardsData();
-  const { selectedCardId, setSelectedCardId, cardHolderHovered } = useNavigationData();
 
-  const hasActivePin = cardHolderHovered || mapPinHovered;
+  const cards = useCardsData();
+  const { selectedCardId, setSelectedCardId, cardHolderHovered, inInspectState, setInInspectState, isMobile } = useNavigationData();
+
+  const hasActivePin = isMobile ? inInspectState : cardHolderHovered || mapPinHovered;
 
   const handleZoomTo = (targetZoom: number) => {
     animate(position.zoom, targetZoom, {
@@ -57,6 +57,27 @@ export default function Map() {
 
   const handleZoomOut = () =>
     handleZoomTo(Math.max(position.zoom / 1.5, ZOOM_MIN));
+
+  const CustomTooltip = () => {
+    if (isMobile) {
+      const card = cards.find((card) => card.id === selectedCardId);
+      return (
+        <Tooltip
+          clickable
+          id={`marker`}
+          isOpen={hasActivePin}
+        >
+          {card ? (
+            <Link to={`${selectedCardId}`} style={{color: "white"}}>{getCardLocationString(card) + ` >`}</Link>
+          ) : null}
+        </Tooltip>
+      );
+    } else {
+      return (
+        <Tooltip id={`marker`} isOpen={hasActivePin} />
+      );
+    }
+  };
 
   return (
     <>
@@ -85,6 +106,7 @@ export default function Map() {
                 zoom={position.zoom}
                 minZoom={ZOOM_MIN}
                 maxZoom={ZOOM_MAX}
+                onMoveStart={() => setInInspectState(false)}
                 onMoveEnd={setPosition}
               >
                 <Geographies geography={"/map.json"}>
@@ -113,14 +135,21 @@ export default function Map() {
                     <Marker
                       key={card.Card}
                       coordinates={card.Coordinates}
-                      onClick={(event) => event.stopPropagation()}
+                      onClick={(event) => {event.stopPropagation();}}
                       onMouseEnter={() => setMapPinHovered(true)}
                       onMouseLeave={() => setMapPinHovered(false)}
                       data-tooltip-id={selectedCardId === card.id ? `marker` : null}
-                      data-tooltip-content={getCardLocationString(card)}
+                      data-tooltip-content={isMobile ? undefined : getCardLocationString(card)}
                     >
                       <Link
                         to={`${card.id}`}
+                        onClick={(event) => {
+                          if (isMobile) {
+                            setInInspectState(true);
+                            setSelectedCardId(card.id);
+                            event.preventDefault();
+                          }
+                        }} 
                         onMouseEnter={() => setSelectedCardId(card.id)}
                       >
                         <motion.g
@@ -153,7 +182,7 @@ export default function Map() {
           </div>
 
           { /* Tooltip */}
-          <Tooltip id={`marker`} isOpen={hasActivePin} />
+          <CustomTooltip/>
         </motion.div>
       </AnimatePresence>
     </>

@@ -10,7 +10,7 @@ import SortSelect from '../components/SortSelect'
 import { SORTING_DATA } from '../utils/constants'
 
 const MAIN_PADDING = 10
-const MIN_HOLDER_WIDTH = 1000
+const MIN_HOLDER_WIDTH = 1500
 
 export default function CardHolder() {
 const [screen, setScreen] = useState({ width: window.innerWidth });
@@ -60,7 +60,7 @@ const canDrag = constraint > 0;
   const gridColumnStyle = {
     gridTemplateColumns: `repeat(${cards.current.length - 1}, minmax(0, max-content)) max-content`,
     maxWidth: `calc(var(--card-width) * ${numCards * 0.9})`, // ensure the cards overlap at least a little bit
-    minWidth: `1000px`
+    minWidth: MIN_HOLDER_WIDTH + `px`
   }
 
   return (

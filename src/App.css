@@ -345,6 +345,12 @@ main {
     gap: 0.25rem;
 }
 
+@media (max-width: 768px) {
+    .card-detail-content {
+        margin-top: 0;
+    }
+}
+
 .card-detail-container {
     display: flex;
     flex-direction: row;

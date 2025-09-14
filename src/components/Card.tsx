@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import { useNavigationData } from "./NavigationContext";
 
@@ -12,8 +12,9 @@ export default function Card({ card, index, selectedCardIndex }: {
     selectedCardIndex: number
 }) {
     const { id } = useParams();
+    const location = useLocation();
 
-    const { selectedCardId, setSelectedCardId, isDraggingCardHolder } = useNavigationData()
+    const { selectedCardId, setSelectedCardId, isDraggingCardHolder, inInspectState, setInInspectState, isMobile } = useNavigationData()
     const isSelected = card.id == selectedCardId
 
     const isInDetailView = id === card.id
@@ -33,6 +34,15 @@ export default function Card({ card, index, selectedCardIndex }: {
     const handleClick = (e: React.MouseEvent) => {
         if (isDraggingCardHolder) {
             e.preventDefault();
+            return;
+        }
+
+        if (isMobile && location.pathname === "/") {
+            if (!inInspectState) {
+                e.preventDefault();
+                setInInspectState(true);
+                return;
+            }
         }
     };
 

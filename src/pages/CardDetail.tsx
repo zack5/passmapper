@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -18,10 +19,14 @@ function getRating(emojiString: string) {
 }
 
 export default function CardDetail() {
-  const { isMobile } = useNavigationData();
+  const { setInInspectState, isMobile } = useNavigationData();
   const { id } = useParams();
   const cards = useCardsData();
   const card = cards.find((card: CardData) => card.id === id)
+
+  useEffect(() => {
+    setInInspectState(false);
+  }, [setInInspectState]);
 
   if (!card) {
     return <div>Error: unable to find card with id {id}</div>;

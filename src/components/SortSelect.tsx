@@ -1,10 +1,16 @@
+import { useLocation } from "react-router-dom";
+
 import Select, { StylesConfig } from 'react-select'
 import { useNavigationData } from './NavigationContext'
 
 import { SORTING_DATA, SORTING_OPTION } from '../utils/constants'
 
 export default function SortSelect({ marginLeft = 0 } = { marginLeft: 0 }) {
-    const { sortingOption, setSortingOption } = useNavigationData();
+    const { sortingOption, setSortingOption, isMobile } = useNavigationData();
+    const location = useLocation();
+    if (isMobile && location.pathname !== '/') {
+        return null;
+    }
 
     type OptionType = {
         value: string;
