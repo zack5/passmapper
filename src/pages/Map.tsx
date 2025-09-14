@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
 import { Tooltip } from 'react-tooltip';
 
+import MapMarker from '../components/MapMarker';
+
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
 import { getCardLocationString } from '../utils/utils';
 
-const ZOOM_MAX = 8;
+const ZOOM_MAX = 100;
 const ZOOM_MIN = 0.75;
 
 function useContainerSize(ref: React.RefObject<HTMLElement | null>) {
@@ -132,40 +134,14 @@ export default function Map() {
                 {cards
                   .sort((a, b) => b.Coordinates[1] - a.Coordinates[1])
                   .map((card) => (
-                    <Marker
-                      key={card.Card}
-                      coordinates={card.Coordinates}
-                      onClick={(event) => {event.stopPropagation();}}
-                      onMouseEnter={() => setMapPinHovered(true)}
-                      onMouseLeave={() => setMapPinHovered(false)}
-                      data-tooltip-id={selectedCardId === card.id ? `marker` : null}
-                      data-tooltip-content={isMobile ? undefined : getCardLocationString(card)}
-                    >
-                      <Link
-                        to={`${card.id}`}
-                        onClick={(event) => {
-                          if (isMobile) {
-                            setInInspectState(true);
-                            setSelectedCardId(card.id);
-                            event.preventDefault();
-                          }
-                        }} 
-                        onMouseEnter={() => setSelectedCardId(card.id)}
-                      >
-                        <motion.g
-                          initial={false}
-                          animate={{
-                            scale: hasActivePin && selectedCardId === card.id ? 1.2 : 0.7,
-                            y: hasActivePin && selectedCardId === card.id ? -18.5 : -16,
-                            x: -12
-                          }}
-                          fill="var(--color-accent)"
-                        >
-                          <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                          <circle fill="#fff" className="map-pin-circle" cx="12" cy="10" r="3" />
-                        </motion.g>
-                      </Link>
-                    </Marker>
+                    <MapMarker
+                      key={card.Card + 'marker'}
+                      card={card}
+                      mapPinHovered={mapPinHovered}
+                      setMapPinHovered={setMapPinHovered}
+                      hasActivePin={hasActivePin}
+                      zoom={position.zoom}
+                    />
                   ))}
               </ZoomableGroup>
             </ComposableMap>
