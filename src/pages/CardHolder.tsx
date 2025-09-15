@@ -10,7 +10,7 @@ import SortSelect from '../components/SortSelect'
 import { SORTING_DATA } from '../utils/constants'
 
 const MAIN_PADDING = 10
-const MIN_HOLDER_WIDTH = 1500
+const MIN_HOLDER_WIDTH = 1200
 
 export default function CardHolder() {
   const [screen, setScreen] = useState({ width: window.innerWidth });

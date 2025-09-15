@@ -3,9 +3,11 @@ import { NavLink, Link } from 'react-router-dom'
 import { Logo } from './Logo'
 import { useTheme } from './ThemeContext'
 import DarkModeToggle from './DarkModeToggle'
+import { useNavigationData } from './NavigationContext'
 
 export default function Header() {
     const { colors } = useTheme()
+    const { isMobile } = useNavigationData()
 
     const activeStyles = {
         color: colors.accent,
@@ -30,9 +32,9 @@ export default function Header() {
                 <NavLink to="/stats" style={getActiveStyles}>Stats</NavLink>
                 <NavLink to="/about" style={getActiveStyles}>About</NavLink>
             </div>
-            <div className='nav-more-options'>
-                <DarkModeToggle />
-            </div>
+            {!isMobile && <div className='nav-more-options'>
+                {/* <DarkModeToggle /> */}
+            </div>}
         </header>
     );
 }

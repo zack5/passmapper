@@ -95,7 +95,7 @@ export default function Map() {
         <motion.div
           ref={containerRef}
           className="map-container"
-          style={{ width: "100vw", height: "100vh" }}
+          style={{ width: "100dvw", height: "100dvh" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
