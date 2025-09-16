@@ -48,6 +48,14 @@ export default function Map() {
     }
   }, []);
 
+  useEffect(() => {
+    if (isMobile) {
+      setPosition({ coordinates: [15, 40], zoom: 0.8 });
+    } else {
+      setPosition({ coordinates: [0, 20], zoom: 1 });
+    }
+  }, [isMobile]);
+
   const hasActivePin = !isDraggingCardHolder && (isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered);
 
   const handleZoomTo = (targetZoom: number) => {
@@ -68,7 +76,6 @@ export default function Map() {
 
   const CustomTooltip = () => {
     if (isMobile) {
-      console.log({ inspectingCardId, selectedCardId });
       const card = cards.find((card) => card.id === selectedCardId);
       return (
         <Tooltip

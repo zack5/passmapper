@@ -24,7 +24,7 @@ export default function Header() {
             <div className='logo-container'>
                 <Link to="/" className='logo-link'>
                     <Logo fill="var(--color-accent)" className="logo" />
-                    <span>Transit card collection tracker</span>
+                    {!isMobile && <span>Transit card collection tracker</span>}
                 </Link>
             </div>
             <div className='nav-container'>

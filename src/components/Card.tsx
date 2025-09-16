@@ -64,9 +64,13 @@ export default function Card({ card, index, selectedCardIndex }: {
                 style={{
                     zIndex: zIndex,
                 }}
-                initial={{ scale: 1 }}
+                initial={{ 
+                    scale: 1,
+                    y: 0
+                }}
                 animate={{
-                    scale: (isSelected) ? 1.1 : 1,
+                    scale: (isSelected) ? 1.2 : 1,
+                    y: (isSelected) ? 6 : 0,
                 }}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}

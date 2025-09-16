@@ -125,8 +125,8 @@
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "It's wonderful that Newark has light rail, but the ear-piercing beeping it makes to warn you the doors are closing makes me seriously consider walking instead.",
     "Coordinates": [
-      -74.1745,
-      40.7315
+      -74.6745,
+      40.4315
     ],
     "Horizontal": "TRUE",
     "Color": 15,
@@ -182,8 +182,8 @@
     "Transit System": "⭐️⭐️⭐️⭐️⭐️",
     "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common. Fare capping with OMNY is just nicer to use, though.",
     "Coordinates": [
-      -74.006,
-      40.7128
+      -74.000,
+      40.7316
     ],
     "Horizontal": "TRUE",
     "Color": 50,
@@ -296,8 +296,8 @@
     "Transit System": "⭐️⭐️⭐️⭐️⭐️",
     "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common.",
     "Coordinates": [
-      -74.006,
-      40.7128
+      -73.700,
+      40.7315
     ],
     "Horizontal": "",
     "Color": 220,
@@ -467,8 +467,8 @@
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "Just a few lines, though a very important few lines! You can also use a MetroCard for all of these lines and more.",
     "Coordinates": [
-      -74.0361,
-      40.7267
+      -74.3000,
+      40.7314
     ],
     "Horizontal": "TRUE",
     "Color": 90,
