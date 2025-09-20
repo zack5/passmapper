@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { animate, AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
-import { Tooltip } from 'react-tooltip';
 
 import MapMarker from '../components/MapMarker';
+import Tooltip from '../components/Tooltip';
 
 import { useCardsData } from '../components/CardsContext';
 import { useNavigationData } from '../components/NavigationContext';
-import { getCardLocationString } from '../utils/utils';
 
 const ZOOM_MAX = 50;
 const ZOOM_MIN = 0.75;
@@ -32,6 +31,7 @@ function useContainerSize(ref: React.RefObject<HTMLElement | null>) {
 export default function Map() {
   const [mapPinHovered, setMapPinHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const tooltipBoundaryRef = useRef<HTMLDivElement>(null!);
   const { width, height } = useContainerSize(containerRef);
 
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
@@ -56,7 +56,7 @@ export default function Map() {
     }
   }, [isMobile]);
 
-  const hasActivePin = !isDraggingCardHolder && (isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered);
+  const hasActivePin = (isMobile ? !!inspectingCardId : cardHolderHovered || mapPinHovered);
 
   const handleZoomTo = (targetZoom: number) => {
     animate(position.zoom, targetZoom, {
@@ -74,26 +74,26 @@ export default function Map() {
   const handleZoomOut = () =>
     handleZoomTo(Math.max(position.zoom / 1.5, ZOOM_MIN));
 
-  const CustomTooltip = () => {
-    if (isMobile) {
-      const card = cards.find((card) => card.id === selectedCardId);
-      return (
-        <Tooltip
-          clickable
-          id={`marker`}
-          isOpen={hasActivePin}
-        >
-          {card ? (
-            <Link to={`${selectedCardId}`} style={{ color: "white" }}>{getCardLocationString(card) + ` ›`}</Link>
-          ) : null}
-        </Tooltip>
-      );
-    } else {
-      return (
-        <Tooltip id={`marker`} isOpen={hasActivePin} />
-      );
-    }
-  };
+  // const CustomTooltip = () => {
+  //   if (isMobile) {
+  //     const card = cards.find((card) => card.id === selectedCardId);
+  //     return (
+  //       <Tooltip
+  //         clickaxble
+  //         id={`marker`}
+  //         isOpen={hasActivePin}
+  //       >
+  //         {card ? (
+  //           <Link to={`${selectedCardId}`} style={{ color: "white" }}>{getCardLocationString(card) + ` ›`}</Link>
+  //         ) : null}
+  //       </Tooltip>
+  //     );
+  //   } else {
+  //     return (
+  //       <Tooltip id={`marker`} isOpen={hasActivePin} />
+  //     );
+  //   }
+  // };
 
   return (
     <AnimatePresence mode="wait">
@@ -175,7 +175,8 @@ export default function Map() {
           </div>
 
           { /* Tooltip */}
-          <CustomTooltip />
+          {/* <div className="tooltip-boundary" ref={tooltipBoundaryRef} /> */}
+          <Tooltip boundaryRef={tooltipBoundaryRef} isOpen={true} />
         </motion.div>
       </>
     </AnimatePresence>

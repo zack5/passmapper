@@ -11,15 +11,14 @@ interface MapMarkerProps {
     mapPinHovered: boolean;
     setMapPinHovered: React.Dispatch<React.SetStateAction<boolean>>;
     hasActivePin: boolean;
-    zoom: number; // Add zoom to props
+    zoom: number;
 }
 
 export default function MapMarker({
     card,
-    mapPinHovered,
     setMapPinHovered,
     hasActivePin,
-    zoom, // Destructure zoom
+    zoom,
 }: MapMarkerProps) {
     const { selectedCardId, setSelectedCardId, inspectingCardId, setInspectingCardId, isMobile, setTriggerScrollCardIntoView } = useNavigationData();
 

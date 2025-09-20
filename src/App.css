@@ -118,6 +118,7 @@ header>div {
     flex-direction: column;
     color: var(--color-accent);
     font-size: 0.9rem;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -161,18 +162,15 @@ header>div {
 a {
     text-decoration: none;
     color: var(--color-link);
-}
-
-a:hover {
     text-decoration: underline;
 }
 
 .nav-container a {
     padding-inline: 10px;
+    text-decoration: none;
 }
 
 .nav-container a:hover {
-    text-decoration: none;
     background-color: var(--color-nav-hover-background);
     outline: 5px solid var(--color-nav-hover-background);
     border-radius: 999px;
@@ -428,6 +426,21 @@ main {
   outline: none;
 }
 
+/* --- TOOLTIP ---*/
+.tooltip-boundary {
+  position: absolute;
+  bottom: var(--content-margins-mobile);
+  left: var(--content-margins-mobile);
+  right: var(--content-margins-mobile);
+  top: calc(var(--content-margins-mobile) + var(--card-height) + var(--header-height));
+  pointer-events: none;
+  z-index: 1000;
+  pointer-events: none;
+
+  /* For debugging: */
+  /* border: 1px solid black; */
+}
+
 /* ZOOM CONTROLS */
 
 .zoom-controls {
@@ -568,7 +581,6 @@ th > button  {
 
 td > a {
     color: var(--color-table-text);
-    text-decoration: underline;
 }
 
 /* --- ABOUT ---*/
