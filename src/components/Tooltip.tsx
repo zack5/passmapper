@@ -17,15 +17,17 @@ type Position = {
     top: number;
     left: number;
     visibility: "visible" | "hidden";
+    placement: "top" | "bottom" | "left" | "right";
 };
 
-export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: TooltipProps) {
+export default function Tooltip({ boundaryRef, offset = 15, isOpen = true }: TooltipProps) {
 
     const tooltipRef = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState<Position>({
         top: 0,
         left: 0,
         visibility: "visible",
+        placement: "top",
     });
 
     const cards = useCardsData();
@@ -36,7 +38,7 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
     const [tooltipText, setTooltipText] = useState("");
     const TooltipChild = () => {
         if (!tooltipText) return null;
-        
+
         if (isMobile) {
             return (
                 <Link
@@ -80,9 +82,41 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
 
             const tooltipRect = tooltipEl.getBoundingClientRect();
 
-            let top = rect.top - tooltipRect.height - offset;
+            let placement: Position["placement"] = "top";
+
+            // Candidate positions
+            const topPos = rect.top - tooltipRect.height - offset;
+            const bottomPos = rect.bottom + offset;
+            const leftPos = rect.left - tooltipRect.width - offset;
+            const rightPos = rect.right + offset;
+
+            // Defaults (try top first)
+            let top = topPos;
             let left = rect.left + rect.width / 2 - tooltipRect.width / 2;
 
+            // Check vertical space for top
+            if (top < boundary.top) {
+                // Not enough room above → try bottom
+                if (bottomPos + tooltipRect.height <= boundary.bottom) {
+                    placement = "bottom";
+                    top = bottomPos;
+                }
+            }
+
+            // If still clipping vertically, try left/right
+            if (placement === "top" || placement === "bottom") {
+                if (left < boundary.left) {
+                    placement = "right";
+                    left = rightPos;
+                    top = rect.top + rect.height / 2 - tooltipRect.height / 2;
+                } else if (left + tooltipRect.width > boundary.right) {
+                    placement = "left";
+                    left = leftPos;
+                    top = rect.top + rect.height / 2 - tooltipRect.height / 2;
+                }
+            }
+
+            // Clamp to boundary just in case
             top = Math.max(boundary.top, Math.min(top, boundary.bottom - tooltipRect.height));
             left = Math.max(boundary.left, Math.min(left, boundary.right - tooltipRect.width));
 
@@ -90,7 +124,10 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
                 top: top + window.scrollY,
                 left: left + window.scrollX,
                 visibility: "visible",
+                placement,
             });
+
+
         };
 
         requestAnimationFrame(updatePosition);
@@ -105,8 +142,48 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
         };
     }, [boundaryRef, offset, card]);
 
-    console.log({ position, card, isOpen });
     if (!isOpen || !card) return null;
+
+    const tooltipColor = "#000000c0";
+    const arrowSize = 6;
+
+    const arrowStyles: Record<
+        "top" | "bottom" | "left" | "right",
+        React.CSSProperties
+    > = {
+        top: {
+            borderLeft: `${arrowSize}px solid transparent`,
+            borderRight: `${arrowSize}px solid transparent`,
+            borderTop: `${arrowSize}px solid ${tooltipColor}`,
+            top: "100%",
+            left: "50%",
+            transform: "translateX(-50%)",
+        },
+        bottom: {
+            borderLeft: `${arrowSize}px solid transparent`,
+            borderRight: `${arrowSize}px solid transparent`,
+            borderBottom: `${arrowSize}px solid ${tooltipColor}`,
+            top: -arrowSize,
+            left: "50%",
+            transform: "translateX(-50%)",
+        },
+        left: {
+            borderTop: `${arrowSize}px solid transparent`,
+            borderBottom: `${arrowSize}px solid transparent`,
+            borderLeft: `${arrowSize}px solid ${tooltipColor}`,
+            top: "50%",
+            left: "100%",
+            transform: "translateY(-50%)",
+        },
+        right: {
+            borderTop: `${arrowSize}px solid transparent`,
+            borderBottom: `${arrowSize}px solid transparent`,
+            borderRight: `${arrowSize}px solid ${tooltipColor}`,
+            top: "50%",
+            left: -arrowSize,
+            transform: "translateY(-50%)",
+        },
+    };
 
     return (
         <motion.div
@@ -119,7 +196,7 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
                 position: "absolute",
                 top: position.top,
                 left: position.left,
-                background: "#000000c0",
+                background: tooltipColor,
                 color: "white",
                 padding: "6px 10px",
                 visibility: position.visibility,
@@ -130,6 +207,16 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
             }}
         >
             {TooltipChild()}
+            <div
+                style={{
+                    position: "absolute",
+                    width: 0,
+                    height: 0,
+                    ...arrowStyles[position.placement],
+                }}
+            />
         </motion.div>
     );
+
+
 };

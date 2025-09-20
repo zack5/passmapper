@@ -155,7 +155,7 @@ export default function Map() {
 
           { /* Tooltip */}
           <div className="tooltip-boundary" ref={tooltipBoundaryRef} />
-          <Tooltip boundaryRef={tooltipBoundaryRef} isOpen={true} />
+          <Tooltip boundaryRef={tooltipBoundaryRef} isOpen={hasActivePin} />
         </motion.div>
       </>
     </AnimatePresence>
