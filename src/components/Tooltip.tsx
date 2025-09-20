@@ -192,18 +192,13 @@ export default function Tooltip({ boundaryRef, offset = 15, isOpen = true }: Too
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
+            className="tooltip"
             style={{
                 position: "absolute",
                 top: position.top,
                 left: position.left,
                 background: tooltipColor,
-                color: "white",
-                padding: "6px 10px",
                 visibility: position.visibility,
-                borderRadius: "4px",
-                fontSize: "0.85rem",
-                whiteSpace: "nowrap",
-                zIndex: 1000,
             }}
         >
             {TooltipChild()}

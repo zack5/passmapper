@@ -427,6 +427,15 @@ main {
 }
 
 /* --- TOOLTIP ---*/
+.tooltip {
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 2000;
+}
+
 .tooltip-boundary {
   position: absolute;
   bottom: var(--content-margins-mobile);
