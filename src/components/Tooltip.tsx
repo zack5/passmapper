@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -8,11 +8,8 @@ import { useNavigationData } from "./NavigationContext";
 import { getCardLocationString } from '../utils/utils';
 
 type TooltipProps = {
-    /** Optional bounding element (defaults to viewport) */
     boundaryRef?: React.RefObject<HTMLElement>;
-    /** Offset in px around the target */
     offset?: number;
-    /** Whether the tooltip is open or not */
     isOpen?: boolean;
 };
 
@@ -36,8 +33,10 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
 
     const targetId = isMobile ? inspectingCardId : selectedCardId;
     const card = cards.find((card) => card.id === targetId);
-    const tooltipText = (card ? getCardLocationString(card) : '');
+    const [tooltipText, setTooltipText] = useState("");
     const TooltipChild = () => {
+        if (!tooltipText) return null;
+        
         if (isMobile) {
             return (
                 <Link
@@ -56,7 +55,7 @@ export default function Tooltip({ boundaryRef, offset = 8, isOpen = true }: Tool
             `[data-tooltip-id="marker"]`
         );
 
-        console.log({ target });
+        setTooltipText(card ? getCardLocationString(card) : "");
 
         if (!target) {
             setPosition((prev) => ({ ...prev, visibility: "hidden" }));

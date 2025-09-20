@@ -74,27 +74,6 @@ export default function Map() {
   const handleZoomOut = () =>
     handleZoomTo(Math.max(position.zoom / 1.5, ZOOM_MIN));
 
-  // const CustomTooltip = () => {
-  //   if (isMobile) {
-  //     const card = cards.find((card) => card.id === selectedCardId);
-  //     return (
-  //       <Tooltip
-  //         clickaxble
-  //         id={`marker`}
-  //         isOpen={hasActivePin}
-  //       >
-  //         {card ? (
-  //           <Link to={`${selectedCardId}`} style={{ color: "white" }}>{getCardLocationString(card) + ` ›`}</Link>
-  //         ) : null}
-  //       </Tooltip>
-  //     );
-  //   } else {
-  //     return (
-  //       <Tooltip id={`marker`} isOpen={hasActivePin} />
-  //     );
-  //   }
-  // };
-
   return (
     <AnimatePresence mode="wait">
       <>
@@ -175,7 +154,7 @@ export default function Map() {
           </div>
 
           { /* Tooltip */}
-          {/* <div className="tooltip-boundary" ref={tooltipBoundaryRef} /> */}
+          <div className="tooltip-boundary" ref={tooltipBoundaryRef} />
           <Tooltip boundaryRef={tooltipBoundaryRef} isOpen={true} />
         </motion.div>
       </>
