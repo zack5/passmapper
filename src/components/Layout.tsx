@@ -9,7 +9,11 @@ export default function Layout() {
         <div className="site-wrapper">
             <Header />
             <div className="page-container">
-                <main style={location.pathname === "/" ? { overflow: "hidden" } : {overflow: "visible"}}>
+                <main style={location.pathname === "/" 
+                    ? { overflow: "hidden" } 
+                    : location.pathname === "/stats" 
+                        ? { overflow: "visible" }
+                        : { overflow: "hidden-x" }}>
                     <Outlet />
                 </main>
                 <Footer />
