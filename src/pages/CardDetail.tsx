@@ -29,7 +29,7 @@ export default function CardDetail() {
   }, [setInspectingCardId]);
 
   if (!card) {
-    return <div>Error: unable to find card with id {id}</div>;
+    return <div>Error: page not found.</div>;
   }
 
   const containerVariants = {
