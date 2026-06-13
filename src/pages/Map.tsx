@@ -47,7 +47,8 @@ export default function Map() {
       setInspectingCardId(selectedCardId);
     }
   }, []);
-
+console.log(cards
+                  .sort((a, b) => b.Coordinates[1] - a.Coordinates[1]))
   useEffect(() => {
     if (isMobile) {
       setPosition({ coordinates: [15, 40], zoom: 0.8 });

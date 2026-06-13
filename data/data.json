@@ -3,7 +3,6 @@
     "Card": "Bee Card",
     "Region": "Select Regions",
     "Country": "New Zealand",
-    "Continent": "Oceania",
     "Date Obtained": "2023-06-15",
     "Acquisition Story": "In typical Kiwi fashion, a very kind woman pointed out where to purchase a Bee Card in the airport when I was confused.",
     "Card Design": "⭐️⭐️⭐️⭐️⭐️",
@@ -16,13 +15,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 30,
+    "Discontinued": "",
     "id": "bee"
   },
   {
     "Card": "CharlieCard",
     "Region": "Boston",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-08-02",
     "Acquisition Story": "Accidentally bought a paper ticket before finding the correct input to get a physical card!",
     "Card Design": "⭐️⭐️",
@@ -35,13 +34,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 80,
+    "Discontinued": "",
     "id": "charlie"
   },
   {
     "Card": "Citycard",
     "Region": "Gent",
     "Country": "Belgium",
-    "Continent": "Europe",
     "Date Obtained": "2025-01-24",
     "Acquisition Story": "This card is primarily a way to see museums for a fixed up-front cost, but it also gives you free transportation so I'm counting it here!",
     "Card Design": "⭐️⭐️⭐️",
@@ -54,13 +53,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 130,
+    "Discontinued": "",
     "id": "citycard"
   },
   {
     "Card": "Clipper Card",
     "Region": "San Francisco Bay Area",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2019-09-15",
     "Acquisition Story": "Acquired during college. Got free rides on the whole system when I lived off campus! Unfortunately, this got me in the habit of forgetting to tap off.",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -73,15 +72,15 @@
     ],
     "Horizontal": "",
     "Color": 180,
+    "Discontinued": "",
     "id": "clipper"
   },
   {
     "Card": "Cruz Cash",
     "Region": "Santa Cruz",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-08-22",
-    "Acquisition Story": "After I saw this card's design and realized it wasn't a joke, I knew I had to order one immediately.",
+    "Acquisition Story": "After I saw this card's design and realized it wasn't a meme, I knew I had to order one immediately.",
     "Card Design": "⭐️⭐️",
     "Design Notes": "I have to admit I am charmed by the early 2000s throw-all-the-clipart-together aesthetic, even though I know there's no way the artist put it together with that vision in mind.",
     "Transit System": "⭐️⭐️",
@@ -92,13 +91,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 75,
+    "Discontinued": "",
     "id": "cruzcash"
   },
   {
     "Card": "Divia",
     "Region": "Dijon",
     "Country": "France",
-    "Continent": "Europe",
     "Date Obtained": "2025-01-15",
     "Acquisition Story": "This card is personalized! It's got my photo and everything. Had to go into a DMV-esque office to get it.",
     "Card Design": "⭐️⭐️",
@@ -111,13 +110,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 10,
+    "Discontinued": "",
     "id": "divia"
   },
   {
     "Card": "FARE-PAY",
     "Region": "New Jersey",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-08-09",
     "Acquisition Story": "Shamefully, I did not realize that New Jersey Transit had rolled out their new transit card until four months after its launch!",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -130,13 +129,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 15,
+    "Discontinued": "",
     "id": "farepay"
   },
   {
     "Card": "Go Card",
     "Region": "South East Queensland",
     "Country": "Australia",
-    "Continent": "Oceania",
     "Date Obtained": "2023-04-21",
     "Acquisition Story": "I missed getting one when I visited the Gold Coast, so I enlisted a friend to pick one up when they visited Brisbane. Thanks Nate!!",
     "Card Design": "⭐️",
@@ -149,13 +148,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 170,
+    "Discontinued": "",
     "id": "go"
   },
   {
     "Card": "Go CT Card",
     "Region": "Connecticut",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-08-18",
     "Acquisition Story": "After calling multiple stores that allegdly sold Go CT Cards but had no idea what I was talking about, I resorted to using their online order form to have one mailed home.",
     "Card Design": "⭐️⭐️⭐️",
@@ -168,13 +167,13 @@
     ],
     "Horizontal": "",
     "Color": 0,
+    "Discontinued": "",
     "id": "goct"
   },
   {
     "Card": "MetroCard",
     "Region": "New York City",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-05-01",
     "Acquisition Story": "I definitely had MetroCards before this, but I must have thrown them away!",
     "Card Design": "⭐️⭐️⭐️",
@@ -182,18 +181,18 @@
     "Transit System": "⭐️⭐️⭐️⭐️⭐️",
     "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common. Fare capping with OMNY is just nicer to use, though.",
     "Coordinates": [
-      -74.000,
-      40.7316
+      -74,
+      40.7128
     ],
     "Horizontal": "TRUE",
     "Color": 50,
+    "Discontinued": "2025-12-31",
     "id": "metrocard"
   },
   {
     "Card": "Mobib",
     "Region": "Brussels",
     "Country": "Belgium",
-    "Continent": "Europe",
     "Date Obtained": "2025-01-22",
     "Acquisition Story": "I never figured out how to buy more than one ride at a time 😅",
     "Card Design": "⭐️⭐️⭐️⭐️⭐️",
@@ -206,13 +205,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 140,
+    "Discontinued": "",
     "id": "mobib"
   },
   {
     "Card": "MST Go Card",
     "Region": "Monterey County",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-08-19",
     "Acquisition Story": "I ordered this card by mail. I was pleasantly surprised that the envelope was addressed by hand!",
     "Card Design": "⭐️⭐️",
@@ -225,13 +224,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 185,
+    "Discontinued": "",
     "id": "mstgo"
   },
   {
     "Card": "Myki",
     "Region": "Victoria",
     "Country": "Australia",
-    "Continent": "Oceania",
     "Date Obtained": "2023-07-28",
     "Acquisition Story": "I share Melbourninas' love of trams, but I do not feel the same about hook turns.",
     "Card Design": "⭐️⭐️⭐️",
@@ -244,13 +243,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 190,
+    "Discontinued": "",
     "id": "myki"
   },
   {
     "Card": "MyWay",
     "Region": "Canberra",
     "Country": "Australia",
-    "Continent": "Oceania",
     "Date Obtained": "2023-05-05",
     "Acquisition Story": "Picked up at a newsagent near my hotel by the Italian cultural center. Felt like an appropriate way to acknowledge my Italian-Australian ancestry?",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -263,13 +262,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 210,
+    "Discontinued": "",
     "id": "myway"
   },
   {
     "Card": "Navigo",
     "Region": "Paris",
     "Country": "France",
-    "Continent": "Europe",
     "Date Obtained": "2025-01-18",
     "Acquisition Story": "Merci to the very nice agent who helped me after I accidentally bought a single-use ticket",
     "Card Design": "⭐️⭐️⭐️",
@@ -282,13 +281,13 @@
     ],
     "Horizontal": "",
     "Color": 100,
+    "Discontinued": "",
     "id": "navigo"
   },
   {
     "Card": "OMNY",
     "Region": "New York City",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-05-01",
     "Acquisition Story": "Acquired during the early phase of the rollout when OMNY vending machines were only at major stations.",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -296,18 +295,18 @@
     "Transit System": "⭐️⭐️⭐️⭐️⭐️",
     "Transit System Notes": "Transit often trivializes moving around the city. Generally safe, though unpleasant incidents are frustratingly common.",
     "Coordinates": [
-      -73.700,
-      40.7315
+      -74.3,
+      40.7128
     ],
     "Horizontal": "",
     "Color": 220,
+    "Discontinued": "",
     "id": "omny"
   },
   {
     "Card": "Opal",
     "Region": "Sydney",
     "Country": "Australia",
-    "Continent": "Oceania",
     "Date Obtained": "2022-09-01",
     "Acquisition Story": "My parents unearthed this card from deep within a drawer before I moved to Sydney. We aren't sure when it was originally purchased! I miss getting my Opal balance reimbursed by my job :(",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -320,13 +319,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 200,
+    "Discontinued": "",
     "id": "opal"
   },
   {
     "Card": "OPUS",
     "Region": "Quebec",
     "Country": "Canada",
-    "Continent": "North America",
     "Date Obtained": "2024-06-28",
     "Acquisition Story": "At one point when the station wasn't busy, I tried reloading my card via the app, but a grumpy older gentleman told me off in French for standing in the way. Would recommend!",
     "Card Design": "⭐️⭐️⭐️",
@@ -339,13 +338,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 150,
+    "Discontinued": "",
     "id": "opus"
   },
   {
     "Card": "Orca",
     "Region": "Seattle",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2022-07-07",
     "Acquisition Story": "It didn't rain once during the whole two weeks I visited in June, not sure what people are complaining about??",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -358,13 +357,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 160,
+    "Discontinued": "2022-10-01",
     "id": "orca"
   },
   {
     "Card": "Oura",
     "Region": "Auvergne-Rhône-Alpes",
     "Country": "France",
-    "Continent": "Europe",
     "Date Obtained": "2025-02-04",
     "Acquisition Story": "I briefly lived in Annecy, but I didn't acquire this until I returned a few years later. I did not realize I needed to bring a physical photo with me, but I was able to order it online and have it mailed to the US!",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -377,13 +376,13 @@
     ],
     "Horizontal": "",
     "Color": 110,
+    "Discontinued": "",
     "id": "oura"
   },
   {
     "Card": "OV-chipkaart",
     "Region": "The Netherlands",
     "Country": "The Netherlands",
-    "Continent": "Europe",
     "Date Obtained": "2025-01-27",
     "Acquisition Story": "Turns out it's not just bikes—Amsterdam has world class public transit as well! Though I did have difficulty discerning which vending machines sold cards and which ones did not.",
     "Card Design": "⭐️⭐️⭐️",
@@ -396,13 +395,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 120,
+    "Discontinued": "",
     "id": "ov"
   },
   {
     "Card": "People Mover",
     "Region": "Anchorage",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-07-08",
     "Acquisition Story": "My photo! It's so big on the card!! No longer shall I live in fear of transit fraud",
     "Card Design": "⭐️⭐️",
@@ -415,13 +414,13 @@
     ],
     "Horizontal": "",
     "Color": 65,
+    "Discontinued": "",
     "id": "peoplemover"
   },
   {
     "Card": "Ride Ready",
     "Region": "Burlington",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-07-02",
     "Acquisition Story": "Protip from the agent who sold me the card: take note of the ID number of the bus you board in case you lose something and need to track it down!",
     "Card Design": "⭐️⭐️⭐️",
@@ -434,13 +433,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 55,
+    "Discontinued": "",
     "id": "gmt"
   },
   {
     "Card": "SEPTA Key",
     "Region": "Philidelphia",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-04-19",
     "Acquisition Story": "The card was warm when it popped out of the vending machine!",
     "Card Design": "⭐️⭐️⭐️",
@@ -453,13 +452,13 @@
     ],
     "Horizontal": "",
     "Color": 95,
+    "Discontinued": "",
     "id": "septakey"
   },
   {
     "Card": "SmartLink",
     "Region": "New York City metropolitan area",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-06-01",
     "Acquisition Story": "Vending machines only accept cash, and are strategically placed near other similar looking yet unrelated vending machines. Final boss energy.",
     "Card Design": "⭐️⭐️⭐️",
@@ -467,18 +466,18 @@
     "Transit System": "⭐️⭐️",
     "Transit System Notes": "Just a few lines, though a very important few lines! You can also use a MetroCard for all of these lines and more.",
     "Coordinates": [
-      -74.3000,
-      40.7314
+      -73.7000,
+      40.7128
     ],
     "Horizontal": "TRUE",
     "Color": 90,
+    "Discontinued": "",
     "id": "smartlink"
   },
   {
     "Card": "SmartRider",
     "Region": "Perth",
     "Country": "Australia",
-    "Continent": "Oceania",
     "Date Obtained": "2023-12-20",
     "Acquisition Story": "Obtaining the card was easy. Convincing my family to let me take public transit from the airport to their home was harder.",
     "Card Design": "⭐️",
@@ -491,13 +490,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 70,
+    "Discontinued": "",
     "id": "smartrider"
   },
   {
     "Card": "SmarTrip",
     "Region": "Washington, D.C.",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-04-11",
     "Acquisition Story": "I don't usually like Brutalist architecture, but I love these stations!",
     "Card Design": "⭐️⭐️",
@@ -510,13 +509,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 92,
+    "Discontinued": "",
     "id": "smarttrip"
   },
   {
     "Card": "The Bus",
     "Region": "Springfield Missouri",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-12-13",
     "Acquisition Story": "Quick and easy grab while in the downtown.",
     "Card Design": "⭐️⭐️",
@@ -529,13 +528,13 @@
     ],
     "Horizontal": "TRUE",
     "Color": 60,
+    "Discontinued": "",
     "id": "thebus"
   },
   {
     "Card": "Tropicard",
     "Region": "Fort Myers",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2024-11-30",
     "Acquisition Story": "Possibly the most expensive in the list? My home base was not well served by busses, so I resorted to Ubering to the nearest ticket vending machine and back.",
     "Card Design": "⭐️⭐️⭐️⭐️",
@@ -548,13 +547,32 @@
     ],
     "Horizontal": "TRUE",
     "Color": 20,
+    "Discontinued": "",
     "id": "tropicard"
+  },
+  {
+    "Card": "Umo",
+    "Region": "British Columbia",
+    "Country": "Canada",
+    "Date Obtained": "2026-06-04",
+    "Acquisition Story": "An easy grab from the Victoria Tourist Centre!Allegedly the name comes from \"you move\".",
+    "Card Design": "⭐️⭐️⭐️",
+    "Design Notes": "I adore the little character in the 'u'! I wish he was more the star of the show.",
+    "Transit System": "⭐️⭐️",
+    "Transit System Notes": "Decent bus network (though inexplicably lacking a good connection to YYJ) with exceptional bike infrastructure by North American standards!",
+    "Coordinates": [
+      -123.3656,
+      48.4284
+    ],
+    "Horizontal": "TRUE",
+    "Color": 182,
+    "Discontinued": "",
+    "id": "umo"
   },
   {
     "Card": "Ventra",
     "Region": "Chicago",
     "Country": "USA",
-    "Continent": "North America",
     "Date Obtained": "2025-07-25",
     "Acquisition Story": "I'm convinced the signage in O'Hare is designed to make it as hard as possible to find the train station.",
     "Card Design": "⭐️⭐️⭐️⭐️⭐️",
@@ -567,6 +585,7 @@
     ],
     "Horizontal": "",
     "Color": 105,
+    "Discontinued": "",
     "id": "ventra"
   }
 ]
